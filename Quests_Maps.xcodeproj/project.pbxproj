@@ -16,6 +16,7 @@
 		4BCA10122489AB7600467CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA10102489AB7600467CB4 /* LaunchScreen.storyboard */; };
 		4BCA101D2489AB7600467CB4 /* Quests_MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA101C2489AB7600467CB4 /* Quests_MapsTests.swift */; };
 		4BCA10282489AB7600467CB4 /* Quests_MapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10272489AB7600467CB4 /* Quests_MapsUITests.swift */; };
+		4BCA10362489ABDF00467CB4 /* animate_path.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA10352489ABDF00467CB4 /* animate_path.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4BCA10232489AB7600467CB4 /* Quests_MapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Quests_MapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BCA10272489AB7600467CB4 /* Quests_MapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests_MapsUITests.swift; sourceTree = "<group>"; };
 		4BCA10292489AB7600467CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BCA10352489ABDF00467CB4 /* animate_path.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animate_path.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		4BCA10012489AB7100467CB4 /* Quests_Maps */ = {
 			isa = PBXGroup;
 			children = (
+				4BCA10352489ABDF00467CB4 /* animate_path.mp3 */,
 				4BCA10022489AB7100467CB4 /* AppDelegate.swift */,
 				4BCA10042489AB7100467CB4 /* SceneDelegate.swift */,
 				4BCA10062489AB7100467CB4 /* ViewController.swift */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BCA10122489AB7600467CB4 /* LaunchScreen.storyboard in Resources */,
+				4BCA10362489ABDF00467CB4 /* animate_path.mp3 in Resources */,
 				4BCA100F2489AB7600467CB4 /* Assets.xcassets in Resources */,
 				4BCA100A2489AB7100467CB4 /* Main.storyboard in Resources */,
 			);
@@ -441,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72U296NY4T;
 				INFOPLIST_FILE = Quests_Maps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72U296NY4T;
 				INFOPLIST_FILE = Quests_Maps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

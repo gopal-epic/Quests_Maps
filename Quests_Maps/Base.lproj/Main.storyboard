@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="34f-k4-73Z">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="xgw-ur-5Me" customClass="ViewController" customModule="KnickKnackAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03B-iu-Ojh">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-bg-forest" translatesAutoresizingMaskIntoConstraints="NO" id="ndI-8u-Knk">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-starburst" translatesAutoresizingMaskIntoConstraints="NO" id="wtU-8b-ank">
+                                <rect key="frame" x="188" y="-27.5" width="400" height="403"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-complete-noflag" translatesAutoresizingMaskIntoConstraints="NO" id="MRb-rU-9xp">
+                                <rect key="frame" x="48" y="222" width="140" height="140"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="MBU-Lj-n38" userLabel="flag-1">
+                                <rect key="frame" x="81" y="126.5" width="114" height="171"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-marker" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-w2-673" userLabel="marker-1">
+                                <rect key="frame" x="48" y="182" width="140" height="100"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active" translatesAutoresizingMaskIntoConstraints="NO" id="j9M-wf-fXm">
+                                <rect key="frame" x="318" y="104" width="140" height="140"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-marker" translatesAutoresizingMaskIntoConstraints="NO" id="cQz-eo-zTL" userLabel="marker-2">
+                                <rect key="frame" x="318" y="64" width="140" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InN-bO-uRE">
+                                <rect key="frame" x="412" y="560" width="200" height="48"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6P3-CJ-3wE"/>
+                                    <constraint firstAttribute="height" constant="48" id="faT-e9-cuH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <state key="normal" title="Keep Going!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateButtonAction:" destination="xgw-ur-5Me" eventType="touchUpInside" id="xR7-WJ-Ybc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="centerY" secondItem="MBU-Lj-n38" secondAttribute="centerY" constant="80" id="7al-kp-yfw"/>
+                            <constraint firstItem="ndI-8u-Knk" firstAttribute="leading" secondItem="03B-iu-Ojh" secondAttribute="leading" id="AkS-jz-QUP"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="centerY" secondItem="wtU-8b-ank" secondAttribute="centerY" id="CgR-VS-GUI"/>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="top" secondItem="fjp-qW-CBf" secondAttribute="top" constant="222" id="Dgx-Q0-gJU"/>
+                            <constraint firstItem="InN-bO-uRE" firstAttribute="centerY" secondItem="03B-iu-Ojh" secondAttribute="centerY" constant="200" id="FzZ-zu-GKy"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="leading" secondItem="MRb-rU-9xp" secondAttribute="trailing" constant="130" id="IPQ-Fk-lHs"/>
+                            <constraint firstAttribute="trailing" secondItem="ndI-8u-Knk" secondAttribute="trailing" id="MJM-vs-xlm"/>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="leading" secondItem="fjp-qW-CBf" secondAttribute="leading" constant="48" id="MNJ-c5-4my"/>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="trailing" secondItem="Ox2-w2-673" secondAttribute="trailing" id="NHH-eu-Pgm"/>
+                            <constraint firstAttribute="bottom" secondItem="ndI-8u-Knk" secondAttribute="bottom" id="Qtz-Ly-jgJ"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="top" secondItem="fjp-qW-CBf" secondAttribute="top" constant="104" id="TUh-o2-F2I"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="top" secondItem="cQz-eo-zTL" secondAttribute="top" constant="40" id="Tnf-yH-Jfa"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="centerX" secondItem="wtU-8b-ank" secondAttribute="centerX" id="eYF-EB-e4I"/>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="leading" secondItem="Ox2-w2-673" secondAttribute="leading" id="glj-0z-K5D"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="leading" secondItem="cQz-eo-zTL" secondAttribute="leading" id="hJO-WT-bN0"/>
+                            <constraint firstItem="j9M-wf-fXm" firstAttribute="trailing" secondItem="cQz-eo-zTL" secondAttribute="trailing" id="jaB-lA-Jg1"/>
+                            <constraint firstItem="InN-bO-uRE" firstAttribute="centerX" secondItem="03B-iu-Ojh" secondAttribute="centerX" id="kJH-hS-AOT"/>
+                            <constraint firstItem="Ox2-w2-673" firstAttribute="top" secondItem="MRb-rU-9xp" secondAttribute="top" constant="-40" id="rRo-un-YiT"/>
+                            <constraint firstItem="ndI-8u-Knk" firstAttribute="top" secondItem="03B-iu-Ojh" secondAttribute="top" id="x9W-AF-ykL"/>
+                            <constraint firstItem="MRb-rU-9xp" firstAttribute="centerX" secondItem="MBU-Lj-n38" secondAttribute="centerX" constant="-20" id="xhJ-g4-ecc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fjp-qW-CBf"/>
                     </view>
+                    <connections>
+                        <outlet property="animateButton" destination="InN-bO-uRE" id="yJZ-Xq-cxf"/>
+                        <outlet property="flag1ImageView" destination="MBU-Lj-n38" id="qpF-7N-7nW"/>
+                        <outlet property="marker1ImageView" destination="Ox2-w2-673" id="TdX-s6-ets"/>
+                        <outlet property="marker2ImageView" destination="cQz-eo-zTL" id="Dfc-pV-8Ud"/>
+                        <outlet property="node1ImageView" destination="MRb-rU-9xp" id="ILO-ib-Doa"/>
+                        <outlet property="node2ImageView" destination="j9M-wf-fXm" id="kE6-dA-37t"/>
+                        <outlet property="starBustImageView" destination="wtU-8b-ank" id="bKl-uT-ktX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sew-fO-uGQ" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flag" width="114" height="171"/>
+        <image name="quest-bg-forest" width="1024" height="768"/>
+        <image name="quest-marker" width="71" height="100"/>
+        <image name="quest-node-active" width="140" height="140"/>
+        <image name="quest-node-complete-noflag" width="140" height="140"/>
+        <image name="quest-starburst" width="400" height="403"/>
+    </resources>
 </document>
