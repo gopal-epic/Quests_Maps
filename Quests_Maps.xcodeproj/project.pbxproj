@@ -20,6 +20,9 @@
 		4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA103F2489BDCE00467CB4 /* QuestMapMasterViewController.swift */; };
 		4BCA10412489BDCE00467CB4 /* QuestMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */; };
 		4BCA10442489C1B500467CB4 /* Quest_Map_Scene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */; };
+		4BCA10462489CCEE00467CB4 /* QuestMapAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */; };
+		4BCA10482489CECE00467CB4 /* QuestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10472489CECE00467CB4 /* QuestPath.swift */; };
+		4BCA104A2489DDE900467CB4 /* QuestPathAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapViewController.swift; sourceTree = "<group>"; };
 		4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest_Map_Scene.storyboard; sourceTree = "<group>"; };
 		4BCA103F2489BDCE00467CB4 /* QuestMapMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapMasterViewController.swift; sourceTree = "<group>"; };
+		4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapAlgorithm.swift; sourceTree = "<group>"; };
+		4BCA10472489CECE00467CB4 /* QuestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPath.swift; sourceTree = "<group>"; };
+		4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPathAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,9 @@
 			children = (
 				4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */,
 				4BCA10432489BE7E00467CB4 /* View Controllers */,
+				4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */,
+				4BCA10472489CECE00467CB4 /* QuestPath.swift */,
+				4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */,
 			);
 			path = Quests;
 			sourceTree = "<group>";
@@ -293,11 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BCA10072489AB7100467CB4 /* ViewController.swift in Sources */,
+				4BCA10462489CCEE00467CB4 /* QuestMapAlgorithm.swift in Sources */,
 				4BCA100D2489AB7100467CB4 /* Quests_Maps.xcdatamodeld in Sources */,
 				4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */,
 				4BCA10032489AB7100467CB4 /* AppDelegate.swift in Sources */,
 				4BCA10412489BDCE00467CB4 /* QuestMapViewController.swift in Sources */,
 				4BCA10052489AB7100467CB4 /* SceneDelegate.swift in Sources */,
+				4BCA10482489CECE00467CB4 /* QuestPath.swift in Sources */,
+				4BCA104A2489DDE900467CB4 /* QuestPathAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
