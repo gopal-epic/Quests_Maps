@@ -13,7 +13,9 @@ protocol QuestObjectivesDelegate: AnyObject {
 }
 
 class QuestMapViewController: UIViewController {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var starBustImageView: UIImageView!
     @IBOutlet weak var node1ImageView: UIImageView!
     @IBOutlet weak var flag1ImageView: UIImageView!
@@ -49,7 +51,7 @@ class QuestMapViewController: UIViewController {
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         
-        self.view.layer.addSublayer(shapeLayer)
+       contentView.layer.addSublayer(shapeLayer)
     }
     
     func playLineAnimation() {

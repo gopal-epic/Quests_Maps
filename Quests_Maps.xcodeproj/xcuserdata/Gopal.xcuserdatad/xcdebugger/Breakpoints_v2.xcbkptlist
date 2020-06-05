@@ -14,8 +14,8 @@
             filePath = "Quests_Maps/Quests/View Controllers/QuestMapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "playLineAnimation()"
             landmarkType = "7">
          </BreakpointContent>
