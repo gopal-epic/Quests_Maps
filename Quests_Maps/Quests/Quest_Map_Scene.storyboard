@@ -158,6 +158,7 @@
                         <outlet property="marker2ImageView" destination="34T-ue-7mr" id="4il-m4-129"/>
                         <outlet property="node1ImageView" destination="099-gB-huH" id="u1T-8i-hEf"/>
                         <outlet property="node2ImageView" destination="LSR-c9-jzq" id="eXO-Bo-dfb"/>
+                        <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
                         <outlet property="starBustImageView" destination="Hpx-2M-kn8" id="XJd-uM-Hmx"/>
                     </connections>
                 </viewController>
