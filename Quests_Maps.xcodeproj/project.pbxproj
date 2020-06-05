@@ -17,6 +17,9 @@
 		4BCA101D2489AB7600467CB4 /* Quests_MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA101C2489AB7600467CB4 /* Quests_MapsTests.swift */; };
 		4BCA10282489AB7600467CB4 /* Quests_MapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10272489AB7600467CB4 /* Quests_MapsUITests.swift */; };
 		4BCA10362489ABDF00467CB4 /* animate_path.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA10352489ABDF00467CB4 /* animate_path.mp3 */; };
+		4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA103F2489BDCE00467CB4 /* QuestMapMasterViewController.swift */; };
+		4BCA10412489BDCE00467CB4 /* QuestMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */; };
+		4BCA10442489C1B500467CB4 /* Quest_Map_Scene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		4BCA10272489AB7600467CB4 /* Quests_MapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests_MapsUITests.swift; sourceTree = "<group>"; };
 		4BCA10292489AB7600467CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BCA10352489ABDF00467CB4 /* animate_path.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animate_path.mp3; sourceTree = "<group>"; };
+		4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapViewController.swift; sourceTree = "<group>"; };
+		4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest_Map_Scene.storyboard; sourceTree = "<group>"; };
+		4BCA103F2489BDCE00467CB4 /* QuestMapMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapMasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCA10352489ABDF00467CB4 /* animate_path.mp3 */,
+				4BCA10422489BE6900467CB4 /* Quests */,
 				4BCA10022489AB7100467CB4 /* AppDelegate.swift */,
 				4BCA10042489AB7100467CB4 /* SceneDelegate.swift */,
 				4BCA10062489AB7100467CB4 /* ViewController.swift */,
@@ -132,6 +139,24 @@
 				4BCA10292489AB7600467CB4 /* Info.plist */,
 			);
 			path = Quests_MapsUITests;
+			sourceTree = "<group>";
+		};
+		4BCA10422489BE6900467CB4 /* Quests */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */,
+				4BCA10432489BE7E00467CB4 /* View Controllers */,
+			);
+			path = Quests;
+			sourceTree = "<group>";
+		};
+		4BCA10432489BE7E00467CB4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA103F2489BDCE00467CB4 /* QuestMapMasterViewController.swift */,
+				4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BCA10442489C1B500467CB4 /* Quest_Map_Scene.storyboard in Resources */,
 				4BCA10122489AB7600467CB4 /* LaunchScreen.storyboard in Resources */,
 				4BCA10362489ABDF00467CB4 /* animate_path.mp3 in Resources */,
 				4BCA100F2489AB7600467CB4 /* Assets.xcassets in Resources */,
@@ -268,7 +294,9 @@
 			files = (
 				4BCA10072489AB7100467CB4 /* ViewController.swift in Sources */,
 				4BCA100D2489AB7100467CB4 /* Quests_Maps.xcdatamodeld in Sources */,
+				4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */,
 				4BCA10032489AB7100467CB4 /* AppDelegate.swift in Sources */,
+				4BCA10412489BDCE00467CB4 /* QuestMapViewController.swift in Sources */,
 				4BCA10052489AB7100467CB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
