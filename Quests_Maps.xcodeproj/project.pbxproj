@@ -23,6 +23,8 @@
 		4BCA10462489CCEE00467CB4 /* QuestMapAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */; };
 		4BCA10482489CECE00467CB4 /* QuestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10472489CECE00467CB4 /* QuestPath.swift */; };
 		4BCA104A2489DDE900467CB4 /* QuestPathAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */; };
+		4BCA104C248B1C8900467CB4 /* QuestObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA104B248B1C8900467CB4 /* QuestObjectiveView.swift */; };
+		4BCA104E248B1CAA00467CB4 /* QuestObjectiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BCA104D248B1CAA00467CB4 /* QuestObjectiveView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestMapAlgorithm.swift; sourceTree = "<group>"; };
 		4BCA10472489CECE00467CB4 /* QuestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPath.swift; sourceTree = "<group>"; };
 		4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPathAnimation.swift; sourceTree = "<group>"; };
+		4BCA104B248B1C8900467CB4 /* QuestObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestObjectiveView.swift; sourceTree = "<group>"; };
+		4BCA104D248B1CAA00467CB4 /* QuestObjectiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestObjectiveView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +156,9 @@
 			children = (
 				4BCA103E2489BDCE00467CB4 /* Quest_Map_Scene.storyboard */,
 				4BCA10432489BE7E00467CB4 /* View Controllers */,
-				4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */,
-				4BCA10472489CECE00467CB4 /* QuestPath.swift */,
-				4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */,
+				4BCA1050248B1CC800467CB4 /* Models */,
+				4BCA1051248B1CD000467CB4 /* Animations */,
+				4BCA104F248B1CB300467CB4 /* Custom Views */,
 			);
 			path = Quests;
 			sourceTree = "<group>";
@@ -166,6 +170,32 @@
 				4BCA103D2489BDCE00467CB4 /* QuestMapViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4BCA104F248B1CB300467CB4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA104B248B1C8900467CB4 /* QuestObjectiveView.swift */,
+				4BCA104D248B1CAA00467CB4 /* QuestObjectiveView.xib */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		4BCA1050248B1CC800467CB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA10452489CCEE00467CB4 /* QuestMapAlgorithm.swift */,
+				4BCA10472489CECE00467CB4 /* QuestPath.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4BCA1051248B1CD000467CB4 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4BCA10492489DDE900467CB4 /* QuestPathAnimation.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +305,7 @@
 				4BCA10442489C1B500467CB4 /* Quest_Map_Scene.storyboard in Resources */,
 				4BCA10122489AB7600467CB4 /* LaunchScreen.storyboard in Resources */,
 				4BCA10362489ABDF00467CB4 /* animate_path.mp3 in Resources */,
+				4BCA104E248B1CAA00467CB4 /* QuestObjectiveView.xib in Resources */,
 				4BCA100F2489AB7600467CB4 /* Assets.xcassets in Resources */,
 				4BCA100A2489AB7100467CB4 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BCA10072489AB7100467CB4 /* ViewController.swift in Sources */,
+				4BCA104C248B1C8900467CB4 /* QuestObjectiveView.swift in Sources */,
 				4BCA10462489CCEE00467CB4 /* QuestMapAlgorithm.swift in Sources */,
 				4BCA100D2489AB7100467CB4 /* Quests_Maps.xcdatamodeld in Sources */,
 				4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */,

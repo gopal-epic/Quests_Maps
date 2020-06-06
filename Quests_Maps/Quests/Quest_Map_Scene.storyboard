@@ -73,22 +73,22 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-starburst" translatesAutoresizingMaskIntoConstraints="NO" id="Hpx-2M-kn8">
-                                                <rect key="frame" x="188" y="-27.5" width="400" height="403"/>
+                                                <rect key="frame" x="187" y="-40.5" width="400" height="403"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-complete-noflag" translatesAutoresizingMaskIntoConstraints="NO" id="099-gB-huH">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-complete" translatesAutoresizingMaskIntoConstraints="NO" id="099-gB-huH">
                                                 <rect key="frame" x="48" y="222" width="140" height="140"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="iZH-dS-416" userLabel="flag-1">
                                                 <rect key="frame" x="81" y="126.5" width="114" height="171"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-marker" translatesAutoresizingMaskIntoConstraints="NO" id="WM2-Rt-HUS" userLabel="marker-1">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="WM2-Rt-HUS" userLabel="marker-1">
                                                 <rect key="frame" x="48" y="182" width="140" height="100"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active" translatesAutoresizingMaskIntoConstraints="NO" id="LSR-c9-jzq">
-                                                <rect key="frame" x="318" y="104" width="140" height="140"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-base" translatesAutoresizingMaskIntoConstraints="NO" id="LSR-c9-jzq">
+                                                <rect key="frame" x="318" y="104" width="138" height="114"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-marker" translatesAutoresizingMaskIntoConstraints="NO" id="34T-ue-7mr" userLabel="marker-2">
-                                                <rect key="frame" x="318" y="64" width="140" height="100"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="34T-ue-7mr" userLabel="marker-2">
+                                                <rect key="frame" x="318" y="64" width="138" height="100"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
@@ -170,9 +170,9 @@
     <resources>
         <image name="flag" width="114" height="171"/>
         <image name="quest-bg-forest" width="1024" height="768"/>
-        <image name="quest-marker" width="71" height="100"/>
-        <image name="quest-node-active" width="140" height="140"/>
-        <image name="quest-node-complete-noflag" width="140" height="140"/>
+        <image name="quest-node-active-base" width="138" height="114"/>
+        <image name="quest-node-active-marker" width="71" height="100"/>
+        <image name="quest-node-complete" width="140" height="140"/>
         <image name="quest-starburst" width="400" height="403"/>
     </resources>
 </document>

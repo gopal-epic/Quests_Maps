@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-Nf-Vm6" userLabel="StarBust Lottie View">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-starburst" translatesAutoresizingMaskIntoConstraints="NO" id="aic-vV-ywW">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="aic-vV-ywW" secondAttribute="bottom" id="Rs8-xw-SGX"/>
+                        <constraint firstItem="aic-vV-ywW" firstAttribute="top" secondItem="hDb-Nf-Vm6" secondAttribute="top" id="Sdx-DL-Qsh"/>
+                        <constraint firstAttribute="trailing" secondItem="aic-vV-ywW" secondAttribute="trailing" id="kWh-qy-H1P"/>
+                        <constraint firstItem="aic-vV-ywW" firstAttribute="leading" secondItem="hDb-Nf-Vm6" secondAttribute="leading" id="mxw-gb-2ie"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOB-9O-vb3" userLabel="Node Base View">
+                    <rect key="frame" x="131" y="143" width="138" height="114"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-base" translatesAutoresizingMaskIntoConstraints="NO" id="dEl-zh-IGr">
+                            <rect key="frame" x="0.0" y="0.0" width="138" height="114"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-eclipse" translatesAutoresizingMaskIntoConstraints="NO" id="C6D-Tt-Ti2" userLabel="quest-node-active-eclipse">
+                            <rect key="frame" x="41" y="56" width="56" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="f4C-uw-fdd"/>
+                                <constraint firstAttribute="width" constant="56" id="pGN-vM-pc5"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-bi-N4y" userLabel="Number Label">
+                            <rect key="frame" x="58" y="54" width="22.5" height="48"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="114" id="55A-hP-vfR"/>
+                        <constraint firstItem="dEl-zh-IGr" firstAttribute="leading" secondItem="jOB-9O-vb3" secondAttribute="leading" id="Gz5-ui-ehZ"/>
+                        <constraint firstItem="dEl-zh-IGr" firstAttribute="top" secondItem="jOB-9O-vb3" secondAttribute="top" id="Mil-dF-qkn"/>
+                        <constraint firstItem="C6D-Tt-Ti2" firstAttribute="bottom" secondItem="dEl-zh-IGr" secondAttribute="bottom" constant="-14" id="dcf-wT-ZMf"/>
+                        <constraint firstAttribute="trailing" secondItem="dEl-zh-IGr" secondAttribute="trailing" id="gvh-Kv-sMx"/>
+                        <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerY" secondItem="MGk-bi-N4y" secondAttribute="centerY" id="jZJ-pR-1Ny"/>
+                        <constraint firstAttribute="bottom" secondItem="dEl-zh-IGr" secondAttribute="bottom" id="kot-A0-Fof"/>
+                        <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerX" secondItem="jOB-9O-vb3" secondAttribute="centerX" id="pP7-Bq-IDj"/>
+                        <constraint firstAttribute="width" constant="138" id="tS6-nm-2eN"/>
+                        <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerX" secondItem="MGk-bi-N4y" secondAttribute="centerX" id="yRB-8w-wPt"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFm-XX-RrR" userLabel="Node Active Marker Or Buddy View">
+                    <rect key="frame" x="164.5" y="78" width="71" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-XN-S8M">
+                            <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fy8-XN-S8M" secondAttribute="trailing" id="HuF-If-FPZ"/>
+                        <constraint firstItem="fy8-XN-S8M" firstAttribute="leading" secondItem="bFm-XX-RrR" secondAttribute="leading" id="OUp-l3-CvL"/>
+                        <constraint firstAttribute="bottom" secondItem="fy8-XN-S8M" secondAttribute="bottom" id="SDv-Yr-t8i"/>
+                        <constraint firstItem="fy8-XN-S8M" firstAttribute="top" secondItem="bFm-XX-RrR" secondAttribute="top" id="fh7-s7-Bm4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jOB-9O-vb3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6fq-C2-FHG"/>
+                <constraint firstItem="bFm-XX-RrR" firstAttribute="centerX" secondItem="jOB-9O-vb3" secondAttribute="centerX" id="FQD-ys-37C"/>
+                <constraint firstItem="hDb-Nf-Vm6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Gdv-3A-TYS"/>
+                <constraint firstItem="hDb-Nf-Vm6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K8a-My-vjb"/>
+                <constraint firstAttribute="bottom" secondItem="hDb-Nf-Vm6" secondAttribute="bottom" id="LGO-92-lR0"/>
+                <constraint firstItem="jOB-9O-vb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ghF-bf-EID"/>
+                <constraint firstAttribute="trailing" secondItem="hDb-Nf-Vm6" secondAttribute="trailing" id="q2B-UZ-n8a"/>
+                <constraint firstItem="jOB-9O-vb3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="v9m-aa-CPK"/>
+                <constraint firstItem="bFm-XX-RrR" firstAttribute="centerY" secondItem="jOB-9O-vb3" secondAttribute="centerY" constant="-72" id="yTU-fV-GgE"/>
+                <constraint firstItem="jOB-9O-vb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z6c-ub-0wb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nodeActiveMarkerImageView" destination="fy8-XN-S8M" id="Hxs-T1-Zgk"/>
+                <outlet property="nodeActiveMarkerOrBuddyView" destination="bFm-XX-RrR" id="r2E-ct-XEG"/>
+                <outlet property="nodeBaseActiveEclipseImageView" destination="C6D-Tt-Ti2" id="odo-DD-3iP"/>
+                <outlet property="nodeBaseActiveNumberLabel" destination="MGk-bi-N4y" id="Z41-BL-kFM"/>
+                <outlet property="nodeBaseImageView" destination="dEl-zh-IGr" id="utt-VD-T5e"/>
+                <outlet property="nodeBaseView" destination="jOB-9O-vb3" id="OZ9-iU-c34"/>
+                <outlet property="starBustImageView" destination="aic-vV-ywW" id="zUh-Bn-2cp"/>
+                <outlet property="starBustLottieView" destination="hDb-Nf-Vm6" id="937-W6-nDj"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="quest-node-active-base" width="138" height="114"/>
+        <image name="quest-node-active-eclipse" width="56" height="44"/>
+        <image name="quest-node-active-marker" width="71" height="100"/>
+        <image name="quest-starburst" width="400" height="403"/>
+    </resources>
+</document>
