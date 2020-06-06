@@ -21,7 +21,7 @@ class QuestObjectiveView: UIView {
     @IBOutlet weak var nodeActiveMarkerOrBuddyView: UIView!
     @IBOutlet weak var nodeActiveMarkerImageView: UIImageView!
     
-    static var tabbedNibName: String { return "EpicBackPackView" }
+    static var tabbedNibName: String { return "QuestObjectiveView" }
     
     // MARK:- Init Methods
     
@@ -31,5 +31,18 @@ class QuestObjectiveView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    class func populateQuestObjectiveView() -> QuestObjectiveView? {
+        guard let questObjectiveView = Bundle.main.loadNibNamed(QuestObjectiveView.tabbedNibName, owner: self)?.first as? QuestObjectiveView else { return nil }
+        
+        return questObjectiveView
+    }
+    
+    class func addQuestObjectiveView(parentView: UIView) {
+        guard let questObjectiveView = QuestObjectiveView.populateQuestObjectiveView() else { return }
+        
+        questObjectiveView.frame = parentView.frame
+        parentView.addSubview(questObjectiveView)
     }
 }

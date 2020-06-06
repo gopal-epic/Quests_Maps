@@ -72,24 +72,20 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-bg-forest" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-yJ-6EO">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-starburst" translatesAutoresizingMaskIntoConstraints="NO" id="Hpx-2M-kn8">
-                                                <rect key="frame" x="187" y="-40.5" width="400" height="403"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-complete" translatesAutoresizingMaskIntoConstraints="NO" id="099-gB-huH">
-                                                <rect key="frame" x="48" y="222" width="140" height="140"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="iZH-dS-416" userLabel="flag-1">
-                                                <rect key="frame" x="81" y="126.5" width="114" height="171"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="WM2-Rt-HUS" userLabel="marker-1">
-                                                <rect key="frame" x="48" y="182" width="140" height="100"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-base" translatesAutoresizingMaskIntoConstraints="NO" id="LSR-c9-jzq">
-                                                <rect key="frame" x="318" y="104" width="138" height="114"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="34T-ue-7mr" userLabel="marker-2">
-                                                <rect key="frame" x="318" y="64" width="138" height="100"/>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-9b-Kgx" userLabel="Quests Objective View 1 Container" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+                                                <rect key="frame" x="-40" y="83" width="400" height="403"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="X8K-3a-dCz"/>
+                                                    <constraint firstAttribute="height" constant="403" id="vLI-PH-HzZ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-5f-w3k" userLabel="Quests Objective View 2 Container" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="-19" width="400" height="403"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="403" id="3iN-f9-b8O"/>
+                                                    <constraint firstAttribute="width" constant="400" id="AVh-ia-7Kx"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
                                                 <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,26 +103,16 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="trailing" secondItem="WM2-Rt-HUS" secondAttribute="trailing" id="0TW-Ab-Md9"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="centerY" secondItem="Hpx-2M-kn8" secondAttribute="centerY" id="DUk-uW-E9v"/>
                                             <constraint firstAttribute="bottom" secondItem="zMQ-hp-eYM" secondAttribute="bottom" constant="300" id="DdA-0d-m89"/>
                                             <constraint firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="GPd-mm-Ifg"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="top" secondItem="34T-ue-7mr" secondAttribute="top" constant="40" id="IKg-8H-3gf"/>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="48" id="IWi-vb-QOQ"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="MEe-Ty-gGx"/>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="222" id="MyU-bs-U5p"/>
                                             <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="leading" secondItem="34T-ue-7mr" secondAttribute="leading" id="TGD-bZ-Xf1"/>
-                                            <constraint firstItem="WM2-Rt-HUS" firstAttribute="top" secondItem="099-gB-huH" secondAttribute="top" constant="-40" id="a6q-TM-fVE"/>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="leading" secondItem="WM2-Rt-HUS" secondAttribute="leading" id="gCv-B1-sd9"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="centerY" secondItem="iZH-dS-416" secondAttribute="centerY" constant="80" id="haY-Qi-n5A"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="leading" secondItem="099-gB-huH" secondAttribute="trailing" constant="130" id="hhQ-Ce-Ge1"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="centerX" secondItem="Hpx-2M-kn8" secondAttribute="centerX" id="olp-iy-6Hi"/>
-                                            <constraint firstItem="099-gB-huH" firstAttribute="centerX" secondItem="iZH-dS-416" secondAttribute="centerX" constant="-20" id="qc3-Qt-QBL"/>
+                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="83" id="mfp-Hu-4rE"/>
+                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-40" id="nOH-TD-Xhc"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="104" id="rju-vQ-LUY"/>
-                                            <constraint firstItem="LSR-c9-jzq" firstAttribute="trailing" secondItem="34T-ue-7mr" secondAttribute="trailing" id="upP-iq-9Lt"/>
+                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="170" id="yfr-y6-oTt"/>
+                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="-19" id="zuM-kl-MCu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -153,13 +139,9 @@
                     <connections>
                         <outlet property="animateButton" destination="zMQ-hp-eYM" id="bOh-HL-vda"/>
                         <outlet property="contentView" destination="aI8-nD-1H0" id="YlU-Oc-KqZ"/>
-                        <outlet property="flag1ImageView" destination="iZH-dS-416" id="vti-ck-p1G"/>
-                        <outlet property="marker1ImageView" destination="WM2-Rt-HUS" id="xRT-Xk-eSg"/>
-                        <outlet property="marker2ImageView" destination="34T-ue-7mr" id="4il-m4-129"/>
-                        <outlet property="node1ImageView" destination="099-gB-huH" id="u1T-8i-hEf"/>
-                        <outlet property="node2ImageView" destination="LSR-c9-jzq" id="eXO-Bo-dfb"/>
+                        <outlet property="questObjectiveContainer1" destination="9KQ-9b-Kgx" id="yUq-0g-TyQ"/>
+                        <outlet property="questObjectiveContainer2" destination="Wlf-5f-w3k" id="ldQ-Pa-vh7"/>
                         <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
-                        <outlet property="starBustImageView" destination="Hpx-2M-kn8" id="XJd-uM-Hmx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvp-3d-26w" sceneMemberID="firstResponder"/>
@@ -168,11 +150,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flag" width="114" height="171"/>
         <image name="quest-bg-forest" width="1024" height="768"/>
-        <image name="quest-node-active-base" width="138" height="114"/>
-        <image name="quest-node-active-marker" width="71" height="100"/>
-        <image name="quest-node-complete" width="140" height="140"/>
-        <image name="quest-starburst" width="400" height="403"/>
     </resources>
 </document>

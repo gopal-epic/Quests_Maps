@@ -24,6 +24,9 @@ class QuestMapViewController: UIViewController {
     @IBOutlet weak var marker2ImageView: UIImageView!
     @IBOutlet weak var animateButton: UIButton!
     
+    @IBOutlet weak var questObjectiveContainer1: QuestObjectiveView!
+    @IBOutlet weak var questObjectiveContainer2: QuestObjectiveView!
+    
     weak var delegate: QuestObjectivesDelegate?
     
     var shapeLayer = CAShapeLayer()
@@ -43,7 +46,10 @@ class QuestMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addLineShapeLayer()
+//        addLineShapeLayer()
+        
+        QuestObjectiveView.addQuestObjectiveView(parentView: questObjectiveContainer1)
+        QuestObjectiveView.addQuestObjectiveView(parentView: questObjectiveContainer2)
     }
     
     func addLineShapeLayer() {
