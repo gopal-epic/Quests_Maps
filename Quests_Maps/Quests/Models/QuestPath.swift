@@ -20,7 +20,7 @@ class QuestPath: CAShapeLayer {
     static var kDefaultStrokeColor: CGColor { return UIColor.white.cgColor }
     static var kDefaultFillColor: CGColor { return UIColor.clear.cgColor }
     static var kDefaultLineWidth: CGFloat { return 8.0 }
-    static var kDefaultLineDashPattern: [NSNumber] { return [16,10] }
+    static var kDefaultLineDashPattern: [NSNumber] { return [8,18] }
     
     var pathType: PathType = .dottedLine
     
@@ -51,6 +51,7 @@ class QuestPath: CAShapeLayer {
         self.fillColor = fillColorValue
         self.lineWidth = lineWidthValue
         self.lineDashPattern = lineDashPatternValue
+        self.lineCap = CAShapeLayerLineCap.round
     }
     
     required init?(coder: NSCoder) {
