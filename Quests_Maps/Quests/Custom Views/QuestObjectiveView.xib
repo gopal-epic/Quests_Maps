@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-Nf-Vm6" userLabel="StarBust Lottie View">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-Nf-Vm6" userLabel="StarBust Lottie View">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-starburst" translatesAutoresizingMaskIntoConstraints="NO" id="aic-vV-ywW">
@@ -41,18 +41,18 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOB-9O-vb3" userLabel="Node Base View">
                     <rect key="frame" x="131" y="143" width="138" height="114"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-base" translatesAutoresizingMaskIntoConstraints="NO" id="dEl-zh-IGr">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-locked" translatesAutoresizingMaskIntoConstraints="NO" id="dEl-zh-IGr">
                             <rect key="frame" x="0.0" y="0.0" width="138" height="114"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-eclipse" translatesAutoresizingMaskIntoConstraints="NO" id="C6D-Tt-Ti2" userLabel="quest-node-active-eclipse">
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-eclipse" translatesAutoresizingMaskIntoConstraints="NO" id="C6D-Tt-Ti2" userLabel="quest-node-active-eclipse">
                             <rect key="frame" x="41" y="56" width="56" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="f4C-uw-fdd"/>
                                 <constraint firstAttribute="width" constant="56" id="pGN-vM-pc5"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-bi-N4y" userLabel="Number Label">
-                            <rect key="frame" x="58" y="54" width="22.5" height="48"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-bi-N4y" userLabel="Number Label">
+                            <rect key="frame" x="69" y="78" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                         <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerX" secondItem="MGk-bi-N4y" secondAttribute="centerX" id="yRB-8w-wPt"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFm-XX-RrR" userLabel="Node Active Marker Or Buddy View">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFm-XX-RrR" userLabel="Node Active Marker Or Buddy View">
                     <rect key="frame" x="164.5" y="78" width="71" height="100"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-XN-S8M">
@@ -103,9 +103,9 @@
         </view>
     </objects>
     <resources>
-        <image name="quest-node-active-base" width="138" height="114"/>
         <image name="quest-node-active-eclipse" width="56" height="44"/>
         <image name="quest-node-active-marker" width="71" height="100"/>
+        <image name="quest-node-locked" width="140" height="140"/>
         <image name="quest-starburst" width="400" height="403"/>
     </resources>
 </document>

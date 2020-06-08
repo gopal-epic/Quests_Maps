@@ -25,12 +25,10 @@ class QuestObjectiveView: UIView {
     
     static var tabbedNibName: String { return "QuestObjectiveView" }
     
-//    struct NodeBaseViewFrameInMap {
-//        
-//    }
-    
-    var nodeBaseViewFrameInMap: CGRect?
-    var nodeBaseViewCenterInMap: CGPoint?
+    struct NodeBaseViewFrameInMap {
+        var nodeBaseViewFrameInMap: CGRect
+        var nodeBaseViewCenterInMap: CGPoint
+    }
     
     // MARK:- Init Methods
     

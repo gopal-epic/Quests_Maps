@@ -44,7 +44,13 @@ class QuestMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        addLineShapeLayer()
+        questObjectiveView1.starBustLottieView.isHidden = false
+        questObjectiveView1.nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
+        questObjectiveView1.nodeBaseActiveEclipseImageView.isHidden = false
+        questObjectiveView1.nodeBaseActiveNumberLabel.text = "1"
+        questObjectiveView1.nodeActiveMarkerOrBuddyView.isHidden = false
+        
+        addLineShapeLayer()
     }
     
     func addLineShapeLayer() {
