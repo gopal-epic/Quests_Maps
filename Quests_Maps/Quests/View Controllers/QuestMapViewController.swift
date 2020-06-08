@@ -54,11 +54,7 @@ class QuestMapViewController: UIViewController {
     }
     
     func addLineShapeLayer() {
-        guard let node1BaseView = questObjectiveView1.nodeBaseView,
-              let node2BaseView = questObjectiveView2.nodeBaseView
-              else { return }
-        
-        linePath = QuestMapAlgorithm.determineBeizerPath(from: node1BaseView, node2View: node2BaseView)
+        linePath = QuestMapAlgorithm.determineBeizerPath(from: questObjectiveView1, node2View: questObjectiveView2)
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         

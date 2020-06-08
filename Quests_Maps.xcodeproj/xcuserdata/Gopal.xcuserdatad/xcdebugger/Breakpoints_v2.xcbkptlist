@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "798696A0-6715-477F-BBFE-1718E6A0F6C2"
+            uuid = "EEB9677D-357E-4758-8E68-6085C1D49C91"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Quests_Maps/Quests/Custom Views/QuestObjectiveView.swift"
+            filePath = "Quests_Maps/Quests/Models/QuestMapAlgorithm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "commonInit()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "determineBeizerPath(from:node2View:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

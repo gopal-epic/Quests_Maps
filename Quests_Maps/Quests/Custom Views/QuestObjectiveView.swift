@@ -24,10 +24,16 @@ class QuestObjectiveView: UIView {
     @IBOutlet weak var nodeActiveMarkerImageView: UIImageView!
     
     static var tabbedNibName: String { return "QuestObjectiveView" }
+       
+    var frameInQuestMap: CGRect {
+        let contentViewFrame = self.frame
+        let nodeBaseViewFrame = nodeBaseView.frame
+        
+        return CGRect.init(x: (contentViewFrame.origin.x + nodeBaseViewFrame.origin.x), y: (contentViewFrame.origin.y + nodeBaseViewFrame.origin.y), width: nodeBaseViewFrame.size.width, height: nodeBaseViewFrame.size.height)
+    }
     
-    struct NodeBaseViewFrameInMap {
-        var nodeBaseViewFrameInMap: CGRect
-        var nodeBaseViewCenterInMap: CGPoint
+    var centerInQuestMap: CGPoint {
+        return CGPoint.init(x: (frameInQuestMap.origin.x + (frameInQuestMap.size.width / 2)), y: (frameInQuestMap.origin.y + (frameInQuestMap.size.height / 2)))
     }
     
     // MARK:- Init Methods
