@@ -9,7 +9,9 @@
 import UIKit
 
 class QuestObjectiveView: UIView {
-
+    
+    @IBOutlet var contentView: UIView!
+    
     @IBOutlet weak var starBustLottieView: UIView!
     @IBOutlet weak var starBustImageView: UIImageView!
     
@@ -23,26 +25,29 @@ class QuestObjectiveView: UIView {
     
     static var tabbedNibName: String { return "QuestObjectiveView" }
     
+//    struct NodeBaseViewFrameInMap {
+//        
+//    }
+    
+    var nodeBaseViewFrameInMap: CGRect?
+    var nodeBaseViewCenterInMap: CGPoint?
+    
     // MARK:- Init Methods
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        commonInit()
     }
     
-    class func populateQuestObjectiveView() -> QuestObjectiveView? {
-        guard let questObjectiveView = Bundle.main.loadNibNamed(QuestObjectiveView.tabbedNibName, owner: self)?.first as? QuestObjectiveView else { return nil }
-        
-        return questObjectiveView
-    }
-    
-    class func addQuestObjectiveView(parentView: UIView) {
-        guard let questObjectiveView = QuestObjectiveView.populateQuestObjectiveView() else { return }
-        
-        questObjectiveView.frame = parentView.frame
-        parentView.addSubview(questObjectiveView)
+    private func commonInit() {
+        Bundle.main.loadNibNamed(QuestObjectiveView.tabbedNibName, owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }

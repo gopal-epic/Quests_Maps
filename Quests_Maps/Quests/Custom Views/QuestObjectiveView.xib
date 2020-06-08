@@ -6,9 +6,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="w21-64-fOM"/>
+                <outlet property="nodeActiveMarkerImageView" destination="fy8-XN-S8M" id="pu4-YC-U3r"/>
+                <outlet property="nodeActiveMarkerOrBuddyView" destination="bFm-XX-RrR" id="0La-g9-sDX"/>
+                <outlet property="nodeBaseActiveEclipseImageView" destination="C6D-Tt-Ti2" id="EMm-hW-eD5"/>
+                <outlet property="nodeBaseActiveNumberLabel" destination="MGk-bi-N4y" id="ytr-5r-TH8"/>
+                <outlet property="nodeBaseImageView" destination="dEl-zh-IGr" id="Jes-Kh-h4V"/>
+                <outlet property="nodeBaseView" destination="jOB-9O-vb3" id="bLa-aO-ICB"/>
+                <outlet property="starBustImageView" destination="aic-vV-ywW" id="d3E-XI-aAx"/>
+                <outlet property="starBustLottieView" destination="hDb-Nf-Vm6" id="6wc-Be-4zL"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -87,16 +99,6 @@
                 <constraint firstItem="jOB-9O-vb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z6c-ub-0wb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="nodeActiveMarkerImageView" destination="fy8-XN-S8M" id="Hxs-T1-Zgk"/>
-                <outlet property="nodeActiveMarkerOrBuddyView" destination="bFm-XX-RrR" id="r2E-ct-XEG"/>
-                <outlet property="nodeBaseActiveEclipseImageView" destination="C6D-Tt-Ti2" id="odo-DD-3iP"/>
-                <outlet property="nodeBaseActiveNumberLabel" destination="MGk-bi-N4y" id="Z41-BL-kFM"/>
-                <outlet property="nodeBaseImageView" destination="dEl-zh-IGr" id="utt-VD-T5e"/>
-                <outlet property="nodeBaseView" destination="jOB-9O-vb3" id="OZ9-iU-c34"/>
-                <outlet property="starBustImageView" destination="aic-vV-ywW" id="zUh-Bn-2cp"/>
-                <outlet property="starBustLottieView" destination="hDb-Nf-Vm6" id="937-W6-nDj"/>
-            </connections>
             <point key="canvasLocation" x="141" y="154"/>
         </view>
     </objects>

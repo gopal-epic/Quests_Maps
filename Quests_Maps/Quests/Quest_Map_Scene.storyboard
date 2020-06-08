@@ -72,14 +72,14 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-bg-forest" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-yJ-6EO">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-9b-Kgx" userLabel="Quests Objective View 1 Container" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
-                                                <rect key="frame" x="-40" y="83" width="400" height="403"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-9b-Kgx" userLabel="Quests Objective View 1" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+                                                <rect key="frame" x="-84" y="83" width="400" height="403"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="400" id="X8K-3a-dCz"/>
                                                     <constraint firstAttribute="height" constant="403" id="vLI-PH-HzZ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-5f-w3k" userLabel="Quests Objective View 2 Container" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-5f-w3k" userLabel="Quests Objective View 2" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
                                                 <rect key="frame" x="170" y="-19" width="400" height="403"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="403" id="3iN-f9-b8O"/>
@@ -109,7 +109,7 @@
                                             <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
                                             <constraint firstItem="9KQ-9b-Kgx" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="83" id="mfp-Hu-4rE"/>
-                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-40" id="nOH-TD-Xhc"/>
+                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-84" id="nOH-TD-Xhc"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
                                             <constraint firstItem="Wlf-5f-w3k" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="170" id="yfr-y6-oTt"/>
                                             <constraint firstItem="Wlf-5f-w3k" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="-19" id="zuM-kl-MCu"/>
@@ -139,8 +139,8 @@
                     <connections>
                         <outlet property="animateButton" destination="zMQ-hp-eYM" id="bOh-HL-vda"/>
                         <outlet property="contentView" destination="aI8-nD-1H0" id="YlU-Oc-KqZ"/>
-                        <outlet property="questObjectiveContainer1" destination="9KQ-9b-Kgx" id="yUq-0g-TyQ"/>
-                        <outlet property="questObjectiveContainer2" destination="Wlf-5f-w3k" id="ldQ-Pa-vh7"/>
+                        <outlet property="questObjectiveView1" destination="9KQ-9b-Kgx" id="9aY-iG-Qc6"/>
+                        <outlet property="questObjectiveView2" destination="Wlf-5f-w3k" id="rMo-xv-bGZ"/>
                         <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
                     </connections>
                 </viewController>

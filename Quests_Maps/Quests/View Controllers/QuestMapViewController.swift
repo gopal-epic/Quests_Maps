@@ -17,15 +17,13 @@ class QuestMapViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var starBustImageView: UIImageView!
-    @IBOutlet weak var node1ImageView: UIImageView!
     @IBOutlet weak var flag1ImageView: UIImageView!
     @IBOutlet weak var marker1ImageView: UIImageView!
-    @IBOutlet weak var node2ImageView: UIImageView!
     @IBOutlet weak var marker2ImageView: UIImageView!
     @IBOutlet weak var animateButton: UIButton!
     
-    @IBOutlet weak var questObjectiveContainer1: QuestObjectiveView!
-    @IBOutlet weak var questObjectiveContainer2: QuestObjectiveView!
+    @IBOutlet weak var questObjectiveView1: QuestObjectiveView!
+    @IBOutlet weak var questObjectiveView2: QuestObjectiveView!
     
     weak var delegate: QuestObjectivesDelegate?
     
@@ -47,17 +45,18 @@ class QuestMapViewController: UIViewController {
         super.viewDidLoad()
         
 //        addLineShapeLayer()
-        
-        QuestObjectiveView.addQuestObjectiveView(parentView: questObjectiveContainer1)
-        QuestObjectiveView.addQuestObjectiveView(parentView: questObjectiveContainer2)
     }
     
     func addLineShapeLayer() {
-        linePath = QuestMapAlgorithm.determineBeizerPath(from: node1ImageView, node2View: node2ImageView)
+        guard let node1BaseView = questObjectiveView1.nodeBaseView,
+              let node2BaseView = questObjectiveView2.nodeBaseView
+              else { return }
+        
+        linePath = QuestMapAlgorithm.determineBeizerPath(from: node1BaseView, node2View: node2BaseView)
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         
-       contentView.layer.addSublayer(shapeLayer)
+        contentView.layer.addSublayer(shapeLayer)
     }
     
     func playLineAnimation() {
