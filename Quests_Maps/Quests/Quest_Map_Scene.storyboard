@@ -86,6 +86,13 @@
                                                     <constraint firstAttribute="width" constant="400" id="AVh-ia-7Kx"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVf-Xi-Nf6" userLabel="Quests Objective View 3" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
+                                                <rect key="frame" x="442" y="95" width="400" height="403"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="403" id="XYz-Ih-5L2"/>
+                                                    <constraint firstAttribute="width" constant="400" id="fEA-f7-Jrd"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
                                                 <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,7 +114,9 @@
                                             <constraint firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="GPd-mm-Ifg"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="MEe-Ty-gGx"/>
                                             <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
+                                            <constraint firstItem="eVf-Xi-Nf6" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="95" id="RcP-Ms-UC7"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
+                                            <constraint firstItem="eVf-Xi-Nf6" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="442" id="kGS-y8-azn"/>
                                             <constraint firstItem="9KQ-9b-Kgx" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="83" id="mfp-Hu-4rE"/>
                                             <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-84" id="nOH-TD-Xhc"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
@@ -141,6 +150,7 @@
                         <outlet property="contentView" destination="aI8-nD-1H0" id="YlU-Oc-KqZ"/>
                         <outlet property="questObjectiveView1" destination="9KQ-9b-Kgx" id="9aY-iG-Qc6"/>
                         <outlet property="questObjectiveView2" destination="Wlf-5f-w3k" id="rMo-xv-bGZ"/>
+                        <outlet property="questObjectiveView3" destination="eVf-Xi-Nf6" id="R8J-bb-Uoq"/>
                         <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
                     </connections>
                 </viewController>
