@@ -76,28 +76,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-9b-Kgx" userLabel="Quests Objective View 1" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
-                                                <rect key="frame" x="-84" y="83" width="400" height="403"/>
+                                                <rect key="frame" x="-84" y="95" width="400" height="403"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="400" id="X8K-3a-dCz"/>
                                                     <constraint firstAttribute="height" constant="403" id="vLI-PH-HzZ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-5f-w3k" userLabel="Quests Objective View 2" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
-                                                <rect key="frame" x="170" y="-19" width="400" height="403"/>
+                                                <rect key="frame" x="180" y="-20" width="400" height="403"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="403" id="3iN-f9-b8O"/>
                                                     <constraint firstAttribute="width" constant="400" id="AVh-ia-7Kx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVf-Xi-Nf6" userLabel="Quests Objective View 3" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
-                                                <rect key="frame" x="442" y="95" width="400" height="403"/>
+                                                <rect key="frame" x="444" y="95" width="400" height="403"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="403" id="XYz-Ih-5L2"/>
                                                     <constraint firstAttribute="width" constant="400" id="fEA-f7-Jrd"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mw7-yL-gdL" userLabel="Quests Finish Star View" customClass="QuestFinishView" customModule="Quests_Maps" customModuleProvider="target">
-                                                <rect key="frame" x="873" y="112" width="112" height="112"/>
+                                                <rect key="frame" x="884" y="112" width="112" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="4n5-XM-CEb"/>
                                                     <constraint firstAttribute="height" constant="112" id="B67-em-mD7"/>
@@ -131,14 +131,14 @@
                                             <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
                                             <constraint firstItem="eVf-Xi-Nf6" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="95" id="RcP-Ms-UC7"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
-                                            <constraint firstItem="eVf-Xi-Nf6" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="442" id="kGS-y8-azn"/>
-                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="83" id="mfp-Hu-4rE"/>
+                                            <constraint firstItem="eVf-Xi-Nf6" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="444" id="kGS-y8-azn"/>
+                                            <constraint firstItem="9KQ-9b-Kgx" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="95" id="mfp-Hu-4rE"/>
                                             <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-84" id="nOH-TD-Xhc"/>
-                                            <constraint firstItem="mw7-yL-gdL" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="873" id="nmi-uV-2Or"/>
+                                            <constraint firstItem="mw7-yL-gdL" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="884" id="nmi-uV-2Or"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
                                             <constraint firstItem="Ru5-P9-g52" firstAttribute="top" secondItem="zpb-yJ-6EO" secondAttribute="top" id="tZZ-6C-UcW"/>
-                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="170" id="yfr-y6-oTt"/>
-                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="-19" id="zuM-kl-MCu"/>
+                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="180" id="yfr-y6-oTt"/>
+                                            <constraint firstItem="Wlf-5f-w3k" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="-20" id="zuM-kl-MCu"/>
                                         </constraints>
                                     </view>
                                 </subviews>

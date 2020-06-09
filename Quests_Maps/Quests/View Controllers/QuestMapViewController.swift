@@ -14,6 +14,8 @@ protocol QuestObjectivesDelegate: AnyObject {
 
 class QuestMapViewController: UIViewController {
     
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var questPathView: UIView!
@@ -23,14 +25,21 @@ class QuestMapViewController: UIViewController {
     @IBOutlet weak var questObjectiveView3: QuestObjectiveView!
     @IBOutlet weak var questFinishView: QuestFinishView!
     
+    // MARK: - Var & Constants
+    
+    static var tabbedNibName: String { return "QuestMapViewController" }
+    
     weak var delegate: QuestObjectivesDelegate?
     
     var shapeLayer = CAShapeLayer()
     var linePath: UIBezierPath!
+    var objectiveModels: [QuestObjectiveModel]?
     
     @IBAction func animateButtonAction(_ sender: UIButton) {
         playLineAnimation()
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +51,29 @@ class QuestMapViewController: UIViewController {
         questObjectiveView1.nodeActiveMarkerOrBuddyView.isHidden = false
         
         addLineShapeLayer()
+        
+        fetchQuestObjectives()
+    }
+    
+    func fetchQuestObjectives() {
+        objectiveModels = [QuestObjectiveModel]()
+        let count = 4
+        
+        for i in 0..<count {
+            let state = (i == 0 ? QuestObjectiveModel.State.inProgress : QuestObjectiveModel.State.notStarted)
+            let currentXValue: CGFloat
+            if i == 0 {
+                currentXValue = 0
+            } else {
+                guard let objectiveModels = objectiveModels else { continue }
+                
+                let previousObjectiveModel = objectiveModels[i - 1]
+                currentXValue = previousObjectiveModel.position.origin.x
+            }
+            
+            let objectiveModel = QuestObjectiveModel(currentIndex: i, objectivesCount: count, withBuddy: false, objectiveState: state, currentXValue: currentXValue)
+            objectiveModels?.append(objectiveModel)
+        }
     }
     
     func addLineShapeLayer() {
@@ -77,18 +109,3 @@ extension QuestMapViewController: CAAnimationDelegate {
         }
     }
 }
-
-extension UIView {
-
-    func fadeIn(_ duration: TimeInterval = 0.5, delay: TimeInterval = 0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0
-    }, completion: completion)  }
-
-    func fadeOut(_ duration: TimeInterval = 0.5, delay: TimeInterval = 0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 0.3
-    }, completion: completion)
-   }
-}
-
