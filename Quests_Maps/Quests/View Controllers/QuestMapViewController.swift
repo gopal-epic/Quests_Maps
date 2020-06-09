@@ -25,6 +25,7 @@ class QuestMapViewController: UIViewController {
     @IBOutlet weak var questObjectiveView1: QuestObjectiveView!
     @IBOutlet weak var questObjectiveView2: QuestObjectiveView!
     @IBOutlet weak var questObjectiveView3: QuestObjectiveView!
+    @IBOutlet weak var questFinishView: QuestFinishView!
     
     weak var delegate: QuestObjectivesDelegate?
     
@@ -59,8 +60,11 @@ class QuestMapViewController: UIViewController {
         
         let linePath2 = QuestMapAlgorithm.determineRightToLeftBeizerPath(from: questObjectiveView2.frameInQuestMap, node1Center: questObjectiveView2.centerInQuestMap, to: questObjectiveView3.frameInQuestMap, node2Center: questObjectiveView3.centerInQuestMap)
         
+        let linePath3 = QuestMapAlgorithm.determineFinishBeizerPath(from: questObjectiveView3.frameInQuestMap, node1Center: questObjectiveView3.centerInQuestMap, to: questFinishView.frame, node2Center: questFinishView.center)
+        
         linePath = linePath1
         linePath.append(linePath2)
+        linePath.append(linePath3)
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         

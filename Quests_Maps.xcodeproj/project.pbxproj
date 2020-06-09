@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA480D3248F1D8000EBD83E /* QuestFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA480D2248F1D8000EBD83E /* QuestFinishView.swift */; };
+		4BA480D5248F1D8A00EBD83E /* QuestFinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA480D4248F1D8A00EBD83E /* QuestFinishView.xib */; };
 		4BCA10032489AB7100467CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10022489AB7100467CB4 /* AppDelegate.swift */; };
 		4BCA10052489AB7100467CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10042489AB7100467CB4 /* SceneDelegate.swift */; };
 		4BCA10072489AB7100467CB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA10062489AB7100467CB4 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BA480D2248F1D8000EBD83E /* QuestFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestFinishView.swift; sourceTree = "<group>"; };
+		4BA480D4248F1D8A00EBD83E /* QuestFinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestFinishView.xib; sourceTree = "<group>"; };
 		4BCA0FFF2489AB7100467CB4 /* Quests_Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quests_Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BCA10022489AB7100467CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BCA10042489AB7100467CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 			children = (
 				4BCA104B248B1C8900467CB4 /* QuestObjectiveView.swift */,
 				4BCA104D248B1CAA00467CB4 /* QuestObjectiveView.xib */,
+				4BA480D2248F1D8000EBD83E /* QuestFinishView.swift */,
+				4BA480D4248F1D8A00EBD83E /* QuestFinishView.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				4BCA104E248B1CAA00467CB4 /* QuestObjectiveView.xib in Resources */,
 				4BCA100F2489AB7600467CB4 /* Assets.xcassets in Resources */,
 				4BCA100A2489AB7100467CB4 /* Main.storyboard in Resources */,
+				4BA480D5248F1D8A00EBD83E /* QuestFinishView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +344,7 @@
 				4BCA10462489CCEE00467CB4 /* QuestMapAlgorithm.swift in Sources */,
 				4BCA100D2489AB7100467CB4 /* Quests_Maps.xcdatamodeld in Sources */,
 				4BCA10402489BDCE00467CB4 /* QuestMapMasterViewController.swift in Sources */,
+				4BA480D3248F1D8000EBD83E /* QuestFinishView.swift in Sources */,
 				4BCA10032489AB7100467CB4 /* AppDelegate.swift in Sources */,
 				4BCA10412489BDCE00467CB4 /* QuestMapViewController.swift in Sources */,
 				4BCA10052489AB7100467CB4 /* SceneDelegate.swift in Sources */,
