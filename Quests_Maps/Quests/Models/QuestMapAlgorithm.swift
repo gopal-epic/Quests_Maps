@@ -11,11 +11,11 @@ import UIKit
 class QuestMapAlgorithm: NSObject {
     
     class func determineLeftToRightBeizerPath(from node1Frame: CGRect, node1Center: CGPoint, to node2Frame: CGRect, node2Center: CGPoint) -> UIBezierPath {
-        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width - 4), y: (node1Center.y + 30))
+        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width - 4), y: (node1Center.y + 20))
         
         let controlPoint = CGPoint(x: (node1Positon.x + 60), y: node1Positon.y)
         
-        let endPoint = CGPoint(x: (node2Frame.origin.x + 15), y: (node2Center.y + 40))
+        let endPoint = CGPoint(x: (node2Frame.origin.x + 10), y: (node2Center.y + 20))
         
         let controlPointTwo = CGPoint(x: (endPoint.x - 60), y: (endPoint.y + 40))
         
@@ -29,13 +29,13 @@ class QuestMapAlgorithm: NSObject {
     }
     
     class func determineRightToLeftBeizerPath(from node1Frame: CGRect, node1Center: CGPoint, to node2Frame: CGRect, node2Center: CGPoint) -> UIBezierPath {
-        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width), y: (node1Center.y + 20))
+        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width - 4), y: (node1Center.y + 10))
         
         let controlPoint = CGPoint(x: (node1Positon.x + 30), y: node1Positon.y)
         
-        let endPoint = CGPoint(x: (node2Frame.origin.x + 10), y: (node2Center.y))
+        let endPoint = CGPoint(x: (node2Frame.origin.x + 10), y: (node2Center.y + 10))
         
-        let controlPointTwo = CGPoint(x: (endPoint.x - 40), y: endPoint.y + 20)
+        let controlPointTwo = CGPoint(x: (endPoint.x - 40), y: endPoint.y)
         
         let path = UIBezierPath()
         path.flatness = 0.05
@@ -47,9 +47,9 @@ class QuestMapAlgorithm: NSObject {
     }
     
     class func determineFinishBeizerPath(from node1Frame: CGRect, node1Center: CGPoint, to node2Frame: CGRect, node2Center: CGPoint) -> UIBezierPath {
-        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width + 4), y: node1Center.y + 10)
+        let node1Positon = CGPoint(x: (node1Frame.origin.x + node1Frame.size.width - 4), y: node1Center.y + 10)
         
-        let controlPoint = CGPoint(x: (node1Positon.x + 30), y: node1Positon.y)
+        let controlPoint = CGPoint(x: (node1Positon.x + 40), y: node1Positon.y - 10)
         
         let endPoint = CGPoint(x: (node2Frame.origin.x + 50), y: (node2Center.y + 20))
         

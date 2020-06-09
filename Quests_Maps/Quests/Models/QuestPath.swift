@@ -20,6 +20,7 @@ class QuestPath: CAShapeLayer {
     static var kDefaultStrokeColor: CGColor { return UIColor.white.cgColor }
     static var kDefaultFillColor: CGColor { return UIColor.clear.cgColor }
     static var kDefaultLineWidth: CGFloat { return 8.0 }
+    static var kThickLineWidth: CGFloat { return 12.0 }
     static var kDefaultLineDashPattern: [NSNumber] { return [8,18] }
     
     var pathType: PathType = .dottedLine
@@ -28,7 +29,14 @@ class QuestPath: CAShapeLayer {
     
     var fillColorValue: CGColor = kDefaultFillColor
     
-    var lineWidthValue: CGFloat = kDefaultLineWidth
+    var lineWidthValue: CGFloat {
+        switch pathType {
+        case .thickLine:
+            return QuestPath.kThickLineWidth
+        default:
+            return QuestPath.kDefaultLineWidth
+        }
+    }
     
     var lineDashPatternValue: [NSNumber]? {
         switch pathType {

@@ -72,6 +72,9 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-bg-forest" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-yJ-6EO">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-P9-g52" userLabel="Quest Path View">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-9b-Kgx" userLabel="Quests Objective View 1" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
                                                 <rect key="frame" x="-84" y="83" width="400" height="403"/>
                                                 <constraints>
@@ -100,7 +103,7 @@
                                                     <constraint firstAttribute="height" constant="112" id="B67-em-mD7"/>
                                                 </constraints>
                                             </view>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
                                                 <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -117,11 +120,14 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="leading" secondItem="zpb-yJ-6EO" secondAttribute="leading" id="7Rb-BO-Nqx"/>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="8hd-wV-3vi"/>
                                             <constraint firstAttribute="bottom" secondItem="zMQ-hp-eYM" secondAttribute="bottom" constant="300" id="DdA-0d-m89"/>
                                             <constraint firstItem="mw7-yL-gdL" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="112" id="FOk-wo-0sy"/>
                                             <constraint firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="GPd-mm-Ifg"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mw7-yL-gdL" secondAttribute="trailing" priority="750" constant="40" id="J0L-ut-cDC"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="MEe-Ty-gGx"/>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="N4i-3L-K2S"/>
                                             <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
                                             <constraint firstItem="eVf-Xi-Nf6" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="95" id="RcP-Ms-UC7"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
@@ -130,6 +136,7 @@
                                             <constraint firstItem="9KQ-9b-Kgx" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="-84" id="nOH-TD-Xhc"/>
                                             <constraint firstItem="mw7-yL-gdL" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="873" id="nmi-uV-2Or"/>
                                             <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="top" secondItem="zpb-yJ-6EO" secondAttribute="top" id="tZZ-6C-UcW"/>
                                             <constraint firstItem="Wlf-5f-w3k" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" constant="170" id="yfr-y6-oTt"/>
                                             <constraint firstItem="Wlf-5f-w3k" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" constant="-19" id="zuM-kl-MCu"/>
                                         </constraints>
@@ -162,6 +169,7 @@
                         <outlet property="questObjectiveView1" destination="9KQ-9b-Kgx" id="9aY-iG-Qc6"/>
                         <outlet property="questObjectiveView2" destination="Wlf-5f-w3k" id="rMo-xv-bGZ"/>
                         <outlet property="questObjectiveView3" destination="eVf-Xi-Nf6" id="R8J-bb-Uoq"/>
+                        <outlet property="questPathView" destination="Ru5-P9-g52" id="Lzf-vv-uql"/>
                         <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
                     </connections>
                 </viewController>

@@ -16,12 +16,8 @@ class QuestMapViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var starBustImageView: UIImageView!
-    @IBOutlet weak var flag1ImageView: UIImageView!
-    @IBOutlet weak var marker1ImageView: UIImageView!
-    @IBOutlet weak var marker2ImageView: UIImageView!
+    @IBOutlet weak var questPathView: UIView!
     @IBOutlet weak var animateButton: UIButton!
-    
     @IBOutlet weak var questObjectiveView1: QuestObjectiveView!
     @IBOutlet weak var questObjectiveView2: QuestObjectiveView!
     @IBOutlet weak var questObjectiveView3: QuestObjectiveView!
@@ -33,14 +29,7 @@ class QuestMapViewController: UIViewController {
     var linePath: UIBezierPath!
     
     @IBAction func animateButtonAction(_ sender: UIButton) {
-        marker1ImageView.fadeOut(completion: {
-            (finished: Bool) -> Void in
-            self.marker1ImageView.removeFromSuperview()
-            
-            self.flag1ImageView.fadeIn { (finished: Bool) -> Void in
-                self.playLineAnimation()
-            }
-        })
+        playLineAnimation()
     }
     
     override func viewDidLoad() {
@@ -68,7 +57,7 @@ class QuestMapViewController: UIViewController {
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         
-        contentView.layer.addSublayer(shapeLayer)
+        questPathView.layer.addSublayer(shapeLayer)
     }
     
     func playLineAnimation() {
@@ -84,9 +73,7 @@ extension QuestMapViewController: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag == true {
-            self.starBustImageView.fadeIn { (finished: Bool) -> Void in
-                self.marker2ImageView.fadeIn()
-            }
+            // finished animation
         }
     }
 }
