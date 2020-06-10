@@ -49,9 +49,6 @@ class QuestMapViewController: UIViewController {
         
         addQuestObjectivesToContentView()
         addDottedLineToQuestPathView()
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func fetchQuestObjectives() {
@@ -90,7 +87,7 @@ class QuestMapViewController: UIViewController {
                 contentView.addSubview(finishView)
                 
                 if let previousObjectiveView = previousObjectiveView {
-                    dottedLine = QuestMapAlgorithm.determineFinishBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: finishView.frame, node2Center: finishView.center)
+                    dottedLine = QuestMapAlgorithm.determineBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: finishView.frame, node2Center: finishView.center, finishNode: true)
                 }
                 
                 scrollView.contentSize = CGSize(width: (finishView.frame.origin.x + finishView.frame.size.width + 40), height: contentView.frame.size.height)
@@ -108,11 +105,7 @@ class QuestMapViewController: UIViewController {
                 contentView.addSubview(currentObjectiveView)
                 
                 if let previousObjectiveView = previousObjectiveView {
-                    if currentModel.order == QuestObjectiveModel.Order.odd {
-                        dottedLine = QuestMapAlgorithm.determineLeftToRightBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap)
-                    } else {
-                        dottedLine = QuestMapAlgorithm.determineRightToLeftBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap)
-                    }
+                    dottedLine = QuestMapAlgorithm.determineBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap, finishNode: false)
                 }
                 
                 previousObjectiveView = currentObjectiveView
