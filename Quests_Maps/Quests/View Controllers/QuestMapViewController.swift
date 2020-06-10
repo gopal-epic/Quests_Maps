@@ -61,17 +61,17 @@ class QuestMapViewController: UIViewController {
         
         for i in 0..<count {
             let state = (i == 0 ? QuestObjectiveModel.State.inProgress : QuestObjectiveModel.State.notStarted)
-            let currentXValue: CGFloat
+            let previousXValue: CGFloat
             if i == 0 {
-                currentXValue = 0
+                previousXValue = 0
             } else {
                 guard let objectiveModels = objectiveModels else { continue }
                 
                 let previousObjectiveModel = objectiveModels[i - 1]
-                currentXValue = previousObjectiveModel.position.origin.x
+                previousXValue = previousObjectiveModel.position.origin.x
             }
             
-            let objectiveModel = QuestObjectiveModel(currentIndex: i, objectivesCount: count, withBuddy: false, objectiveState: state, currentXValue: currentXValue)
+            let objectiveModel = QuestObjectiveModel(currentIndex: i, objectivesCount: count, withBuddy: false, objectiveState: state, previousXVal: previousXValue)
             objectiveModels?.append(objectiveModel)
         }
     }

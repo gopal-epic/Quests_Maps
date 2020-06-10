@@ -30,54 +30,6 @@ struct QuestObjectiveModel {
         case closed = 3
     }
     
-    struct Padding {
-        let nodeType: NodeType
-        var x: CGFloat {
-            return (self.nodeType == .finish ? 440.0 : 264.0)
-        }
-    }
-    
-    struct Origin {
-        let isFirstNode: Bool
-        let order: Order
-        let previousXValue: CGFloat
-        let padding: Padding
-        
-        var x: CGFloat {
-            var xValue: CGFloat
-            
-            if self.isFirstNode == true {
-                xValue = QuestObjectiveModel.kDefaultXForiPAD
-            } else {
-                xValue = previousXValue + padding.x
-            }
-            
-            return xValue
-        }
-        
-        var y: CGFloat {
-            return ((self.order == .even) ? 95.0 : -20.0)
-        }
-    }
-    
-    struct Size {
-        let nodeType: NodeType
-        
-        var width: CGFloat {
-            return (self.nodeType == .finish ? 112.0 : 400)
-        }
-        
-        var height: CGFloat {
-            return (self.nodeType == .finish ? 112.0 : 403)
-        }
-    }
-    
-    struct Position {
-        let value: Int
-        let origin: Origin
-        let size: Size
-    }
-    
     static let kDefaultXForiPAD: CGFloat = -84.0
     
     let index: Int
@@ -86,13 +38,51 @@ struct QuestObjectiveModel {
     let order: Order
     let nodeType: NodeType
     let state: State
-    let position: Position
     let isFirstNode: Bool
     let isLastNode: Bool
     
+    let previousXValue: CGFloat
+    
+    var paddingForXValue: CGFloat {
+        return (nodeType == .finish ? 440.0 : 264.0)
+    }
+    var origin: CGPoint {
+        var x: CGFloat {
+            var xValue: CGFloat
+            
+            if self.isFirstNode == true {
+                xValue = QuestObjectiveModel.kDefaultXForiPAD
+            } else {
+                xValue = previousXValue + paddingForXValue
+            }
+            
+            return xValue
+        }
+        
+        var y: CGFloat {
+            return (nodeType == .finish ? 112.0 : ((self.order == .even) ? 95.0 : -20.0))
+        }
+        
+        return CGPoint(x: x, y: y)
+    }
+    var size: CGSize {
+        var width: CGFloat {
+            return (nodeType == .finish ? 112.0 : 400)
+        }
+        
+        var height: CGFloat {
+            return (nodeType == .finish ? 112.0 : 403)
+        }
+        
+        return CGSize(width: width, height: height)
+    }
+    var position: CGRect {
+        return CGRect(origin: origin, size: size)
+    }
+    
     // MARK: - Init Methods
     
-    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, currentXValue: CGFloat) {
+    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, previousXVal: CGFloat) {
         index = currentIndex
         count = objectivesCount
         withReadingBuddy = withBuddy
@@ -101,6 +91,7 @@ struct QuestObjectiveModel {
         isLastNode = (currentIndex == (objectivesCount - 1))
         order = (((currentIndex % 2) == 0) ? .even : .odd)
         nodeType = (isLastNode ? .finish : (withReadingBuddy ? .questObjectiveWithBuddy : .questObjective))
-        position = Position(value: (currentIndex + 1), origin: Origin(isFirstNode: (currentIndex == 0), order: order, previousXValue: currentXValue, padding: Padding(nodeType: nodeType)), size: Size(nodeType: nodeType))
+        
+        previousXValue = previousXVal
     }
 }
