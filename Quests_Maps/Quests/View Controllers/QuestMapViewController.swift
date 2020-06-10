@@ -20,10 +20,6 @@ class QuestMapViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var questPathView: UIView!
     @IBOutlet weak var animateButton: UIButton!
-    @IBOutlet weak var questObjectiveView1: QuestObjectiveView!
-    @IBOutlet weak var questObjectiveView2: QuestObjectiveView!
-    @IBOutlet weak var questObjectiveView3: QuestObjectiveView!
-    @IBOutlet weak var questFinishView: QuestFinishView!
     
     // MARK: - Var & Constants
     
@@ -31,9 +27,10 @@ class QuestMapViewController: UIViewController {
     
     weak var delegate: QuestObjectivesDelegate?
     
-    var shapeLayer = CAShapeLayer()
-    var linePath: UIBezierPath!
+    var shapeLayer: CAShapeLayer?
+    var linePath: UIBezierPath?
     var objectiveModels: [QuestObjectiveModel]?
+    var objectiveViews: [QuestObjectiveView]?
     
     @IBAction func animateButtonAction(_ sender: UIButton) {
         playLineAnimation()
@@ -44,15 +41,9 @@ class QuestMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questObjectiveView1.starBustLottieView.isHidden = false
-        questObjectiveView1.nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
-        questObjectiveView1.nodeBaseActiveEclipseImageView.isHidden = false
-        questObjectiveView1.nodeBaseActiveNumberLabel.text = "1"
-        questObjectiveView1.nodeActiveMarkerOrBuddyView.isHidden = false
-        
-        addLineShapeLayer()
-        
         fetchQuestObjectives()
+        addQuestObjectivesToContentView()
+        addDottedLineToQuestPathView()
     }
     
     func fetchQuestObjectives() {
@@ -76,23 +67,73 @@ class QuestMapViewController: UIViewController {
         }
     }
     
-    func addLineShapeLayer() {
-        let linePath1 = QuestMapAlgorithm.determineLeftToRightBeizerPath(from: questObjectiveView1.frameInQuestMap, node1Center: questObjectiveView1.centerInQuestMap, to: questObjectiveView2.frameInQuestMap, node2Center: questObjectiveView2.centerInQuestMap)
+    func addQuestObjectivesToContentView() {
+        guard let objectiveModels = objectiveModels else { return }
         
-        let linePath2 = QuestMapAlgorithm.determineRightToLeftBeizerPath(from: questObjectiveView2.frameInQuestMap, node1Center: questObjectiveView2.centerInQuestMap, to: questObjectiveView3.frameInQuestMap, node2Center: questObjectiveView3.centerInQuestMap)
+        var previousObjectiveView: QuestObjectiveView?
+        objectiveViews = [QuestObjectiveView]()
         
-        let linePath3 = QuestMapAlgorithm.determineFinishBeizerPath(from: questObjectiveView3.frameInQuestMap, node1Center: questObjectiveView3.centerInQuestMap, to: questFinishView.frame, node2Center: questFinishView.center)
+        var dottedLine: UIBezierPath?
         
-        linePath = linePath1
-        linePath.append(linePath2)
-        linePath.append(linePath3)
+        for currentModel in objectiveModels {
+            if currentModel.nodeType == QuestObjectiveModel.NodeType.finish {
+                let finishView = QuestFinishView.init(frame: currentModel.position)
+                
+                contentView.addSubview(finishView)
+                
+                if let previousObjectiveView = previousObjectiveView {
+                    dottedLine = QuestMapAlgorithm.determineFinishBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: finishView.frame, node2Center: finishView.center)
+                }
+            } else {
+                let currentObjectiveView = QuestObjectiveView.init(frame: currentModel.position)
+                
+                if currentModel.isFirstNode {
+                    currentObjectiveView.starBustLottieView.isHidden = false
+                    currentObjectiveView.nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
+                    currentObjectiveView.nodeBaseActiveEclipseImageView.isHidden = false
+                    currentObjectiveView.nodeBaseActiveNumberLabel.text = "1"
+                    currentObjectiveView.nodeActiveMarkerOrBuddyView.isHidden = false
+                }
+                
+                contentView.addSubview(currentObjectiveView)
+                
+                if let previousObjectiveView = previousObjectiveView {
+                    if currentModel.order == QuestObjectiveModel.Order.odd {
+                        dottedLine = QuestMapAlgorithm.determineLeftToRightBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap)
+                    } else {
+                        dottedLine = QuestMapAlgorithm.determineRightToLeftBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap)
+                    }
+                }
+                
+                previousObjectiveView = currentObjectiveView
+            }
+            
+            guard let dottedLine = dottedLine else { continue }
+            
+            if linePath == nil {
+                linePath = dottedLine
+            } else {
+                linePath?.append(dottedLine)
+            }
+        }
+    }
+    
+    func addDottedLineToQuestPathView() {
+        guard let linePath = linePath else { return }
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
+        guard let shapeLayer = shapeLayer else { return }
         
         questPathView.layer.addSublayer(shapeLayer)
+        
+        contentView.bringSubviewToFront(animateButton)
     }
     
     func playLineAnimation() {
+        guard let linePath = linePath,
+              let shapeLayer = shapeLayer
+              else { return }
+        
         let shapeLayerTwo = QuestPath.init(path: linePath.cgPath, pathType: .thickLine)
         
         shapeLayer.addSublayer(shapeLayerTwo)
