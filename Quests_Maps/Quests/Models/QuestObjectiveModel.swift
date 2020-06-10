@@ -46,6 +46,15 @@ struct QuestObjectiveModel {
     var paddingForXValue: CGFloat {
         return (nodeType == .finish ? 440.0 : 264.0)
     }
+    
+    var objectiveNodeYValue: CGFloat {
+        return ((self.order == .even) ? 95.0 : -20.0)
+    }
+    
+    var finishNodeYValue: CGFloat {
+        return ((self.order == .even) ? 240 : 112.0)
+    }
+    
     var origin: CGPoint {
         var x: CGFloat {
             var xValue: CGFloat
@@ -60,22 +69,24 @@ struct QuestObjectiveModel {
         }
         
         var y: CGFloat {
-            return (nodeType == .finish ? 112.0 : ((self.order == .even) ? 95.0 : -20.0))
+            return (nodeType == .finish ? finishNodeYValue : objectiveNodeYValue)
         }
         
         return CGPoint(x: x, y: y)
     }
-    var size: CGSize {
-        var width: CGFloat {
-            return (nodeType == .finish ? 112.0 : 400)
-        }
-        
-        var height: CGFloat {
-            return (nodeType == .finish ? 112.0 : 403)
-        }
-        
-        return CGSize(width: width, height: height)
+    
+    var objectiveNodeSize: CGSize {
+        return CGSize(width: 400.0, height: 403.0)
     }
+    
+    var finishNodeSize: CGSize {
+        return CGSize(width: 112.0, height: 112.0)
+    }
+    
+    var size: CGSize {
+        return (nodeType == .finish ? finishNodeSize : objectiveNodeSize)
+    }
+    
     var position: CGRect {
         return CGRect(origin: origin, size: size)
     }
