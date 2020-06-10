@@ -55,10 +55,13 @@ class QuestMapViewController: UIViewController {
         let count = 4
         
         for i in 0..<count {
-            let state = (i == 0 ? QuestObjectiveModel.State.inProgress : QuestObjectiveModel.State.notStarted)
+            var state = (i == 1 ? QuestObjectiveModel.State.inProgress : QuestObjectiveModel.State.notStarted)
             let previousXValue: CGFloat
+            var viewedCompleted = false
             if i == 0 {
                 previousXValue = 0
+                viewedCompleted = true
+                state = QuestObjectiveModel.State.completed
             } else {
                 guard let objectiveModels = objectiveModels else { continue }
                 
@@ -66,7 +69,7 @@ class QuestMapViewController: UIViewController {
                 previousXValue = previousObjectiveModel.position.origin.x
             }
             
-            let objectiveModel = QuestObjectiveModel(currentIndex: i, objectivesCount: count, withBuddy: false, objectiveState: state, previousXVal: previousXValue)
+            let objectiveModel = QuestObjectiveModel(currentIndex: i, objectivesCount: count, withBuddy: false, objectiveState: state, previousXVal: previousXValue, viewedCompleted: viewedCompleted)
             objectiveModels?.append(objectiveModel)
         }
     }

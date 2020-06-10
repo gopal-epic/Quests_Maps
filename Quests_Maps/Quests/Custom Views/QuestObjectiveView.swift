@@ -22,8 +22,8 @@ class QuestObjectiveView: UIView {
     @IBOutlet weak var nodeBaseActiveEclipseImageView: UIImageView!
     @IBOutlet weak var nodeBaseActiveNumberLabel: UILabel!
     
-    @IBOutlet weak var nodeActiveMarkerOrBuddyView: UIView!
     @IBOutlet weak var nodeActiveMarkerImageView: UIImageView!
+    @IBOutlet weak var flagImageView: UIImageView!
     
     // MARK: - Var & Constants
     
@@ -64,12 +64,12 @@ class QuestObjectiveView: UIView {
     func updateUI() {
         guard quesObjectiveModel.state != QuestObjectiveModel.State.notStarted else { return }
         
-        if quesObjectiveModel.isFirstNode {
-            starBustLottieView.isHidden = false
-            nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
-            nodeBaseActiveEclipseImageView.isHidden = false
-            nodeBaseActiveNumberLabel.text = "\(quesObjectiveModel.nodeNumber)"
-            nodeActiveMarkerOrBuddyView.isHidden = false
-        }
+        starBustLottieView.isHidden = !quesObjectiveModel.showStarBustLottieView
+        nodeBaseImageView.image = quesObjectiveModel.nodeBaseImage
+        nodeBaseActiveEclipseImageView.isHidden = !quesObjectiveModel.showEclipseCircle
+        nodeBaseActiveNumberLabel.text = quesObjectiveModel.nodeNumber
+        
+        nodeActiveMarkerImageView.isHidden = !quesObjectiveModel.showActiveMarkerImageView
+        flagImageView.isHidden = !quesObjectiveModel.showFlagImageView
     }
 }

@@ -9,8 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestObjectiveView" customModule="Quests_Maps" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="w21-64-fOM"/>
-                <outlet property="nodeActiveMarkerImageView" destination="fy8-XN-S8M" id="pu4-YC-U3r"/>
-                <outlet property="nodeActiveMarkerOrBuddyView" destination="bFm-XX-RrR" id="0La-g9-sDX"/>
+                <outlet property="flagImageView" destination="jFA-wV-ba5" id="dp4-IA-zPv"/>
+                <outlet property="nodeActiveMarkerImageView" destination="qlc-JC-uad" id="KGt-sf-ovM"/>
                 <outlet property="nodeBaseActiveEclipseImageView" destination="C6D-Tt-Ti2" id="EMm-hW-eD5"/>
                 <outlet property="nodeBaseActiveNumberLabel" destination="MGk-bi-N4y" id="ytr-5r-TH8"/>
                 <outlet property="nodeBaseImageView" destination="dEl-zh-IGr" id="Jes-Kh-h4V"/>
@@ -57,11 +57,21 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-JC-uad">
+                            <rect key="frame" x="33.5" y="-50" width="71" height="100"/>
+                        </imageView>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="jFA-wV-ba5">
+                            <rect key="frame" x="37" y="-108.5" width="114" height="171"/>
+                        </imageView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="qlc-JC-uad" firstAttribute="centerX" secondItem="jOB-9O-vb3" secondAttribute="centerX" id="2Ax-nB-L2e"/>
                         <constraint firstAttribute="height" constant="114" id="55A-hP-vfR"/>
+                        <constraint firstItem="jFA-wV-ba5" firstAttribute="centerY" secondItem="jOB-9O-vb3" secondAttribute="centerY" constant="-80" id="DeB-6C-ONr"/>
                         <constraint firstItem="dEl-zh-IGr" firstAttribute="leading" secondItem="jOB-9O-vb3" secondAttribute="leading" id="Gz5-ui-ehZ"/>
+                        <constraint firstItem="qlc-JC-uad" firstAttribute="centerY" secondItem="jOB-9O-vb3" secondAttribute="centerY" constant="-57" id="HQA-5J-S38"/>
                         <constraint firstItem="dEl-zh-IGr" firstAttribute="top" secondItem="jOB-9O-vb3" secondAttribute="top" id="Mil-dF-qkn"/>
+                        <constraint firstItem="jFA-wV-ba5" firstAttribute="centerX" secondItem="jOB-9O-vb3" secondAttribute="centerX" constant="25" id="ROD-lj-xe4"/>
                         <constraint firstItem="C6D-Tt-Ti2" firstAttribute="bottom" secondItem="dEl-zh-IGr" secondAttribute="bottom" constant="-14" id="dcf-wT-ZMf"/>
                         <constraint firstAttribute="trailing" secondItem="dEl-zh-IGr" secondAttribute="trailing" id="gvh-Kv-sMx"/>
                         <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerY" secondItem="MGk-bi-N4y" secondAttribute="centerY" id="jZJ-pR-1Ny"/>
@@ -71,31 +81,15 @@
                         <constraint firstItem="C6D-Tt-Ti2" firstAttribute="centerX" secondItem="MGk-bi-N4y" secondAttribute="centerX" id="yRB-8w-wPt"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFm-XX-RrR" userLabel="Node Active Marker Or Buddy View">
-                    <rect key="frame" x="164.5" y="78" width="71" height="100"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-node-active-marker" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-XN-S8M">
-                            <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="fy8-XN-S8M" secondAttribute="trailing" id="HuF-If-FPZ"/>
-                        <constraint firstItem="fy8-XN-S8M" firstAttribute="leading" secondItem="bFm-XX-RrR" secondAttribute="leading" id="OUp-l3-CvL"/>
-                        <constraint firstAttribute="bottom" secondItem="fy8-XN-S8M" secondAttribute="bottom" id="SDv-Yr-t8i"/>
-                        <constraint firstItem="fy8-XN-S8M" firstAttribute="top" secondItem="bFm-XX-RrR" secondAttribute="top" id="fh7-s7-Bm4"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="jOB-9O-vb3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6fq-C2-FHG"/>
-                <constraint firstItem="bFm-XX-RrR" firstAttribute="centerX" secondItem="jOB-9O-vb3" secondAttribute="centerX" id="FQD-ys-37C"/>
                 <constraint firstItem="hDb-Nf-Vm6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Gdv-3A-TYS"/>
                 <constraint firstItem="hDb-Nf-Vm6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K8a-My-vjb"/>
                 <constraint firstAttribute="bottom" secondItem="hDb-Nf-Vm6" secondAttribute="bottom" id="LGO-92-lR0"/>
                 <constraint firstItem="jOB-9O-vb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ghF-bf-EID"/>
                 <constraint firstAttribute="trailing" secondItem="hDb-Nf-Vm6" secondAttribute="trailing" id="q2B-UZ-n8a"/>
                 <constraint firstItem="jOB-9O-vb3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="v9m-aa-CPK"/>
-                <constraint firstItem="bFm-XX-RrR" firstAttribute="centerY" secondItem="jOB-9O-vb3" secondAttribute="centerY" constant="-72" id="yTU-fV-GgE"/>
                 <constraint firstItem="jOB-9O-vb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z6c-ub-0wb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -103,9 +97,10 @@
         </view>
     </objects>
     <resources>
+        <image name="flag" width="114" height="171"/>
         <image name="quest-node-active-eclipse" width="56" height="44"/>
         <image name="quest-node-active-marker" width="71" height="100"/>
-        <image name="quest-node-locked" width="140" height="140"/>
+        <image name="quest-node-locked" width="138" height="114"/>
         <image name="quest-starburst" width="400" height="403"/>
     </resources>
 </document>

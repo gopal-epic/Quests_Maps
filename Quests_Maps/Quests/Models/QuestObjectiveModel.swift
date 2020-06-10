@@ -40,10 +40,11 @@ struct QuestObjectiveModel {
     let isFirstNode: Bool
     let isLastNode: Bool
     let previousXValue: CGFloat
+    let viewedCompletedPopup: Bool
     
     // MARK: - Init Methods
     
-    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, previousXVal: CGFloat) {
+    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, previousXVal: CGFloat, viewedCompleted: Bool) {
         index = currentIndex
         count = objectivesCount
         withReadingBuddy = withBuddy
@@ -54,6 +55,8 @@ struct QuestObjectiveModel {
         nodeType = (isLastNode ? .finish : (withReadingBuddy ? .questObjectiveWithBuddy : .questObjective))
         
         previousXValue = previousXVal
+        
+        self.viewedCompletedPopup = viewedCompleted
     }
 }
 
@@ -109,9 +112,42 @@ extension QuestObjectiveModel {
 
 extension QuestObjectiveModel {
     
-    // ALL UI Stuff
+    var isActiveNode: Bool {
+        return state == .inProgress
+    }
     
-    var nodeNumber: Int {
-        return index + 1
+    var showStarBustLottieView: Bool {
+        return isActiveNode
+    }
+    
+    var nodeBaseImage: UIImage? {
+        var imageName: String
+        
+        switch state {
+        case .inProgress:
+            imageName = "quest-node-active-base"
+        case .completed:
+            imageName = "quest-node-complete"
+        default:
+            imageName = "quest-node-locked"
+        }
+        
+        return UIImage.init(named: imageName)
+    }
+    
+    var showEclipseCircle: Bool {
+        return isActiveNode
+    }
+    
+    var nodeNumber: String {
+        return isActiveNode ? String(index + 1) : ""
+    }
+    
+    var showActiveMarkerImageView: Bool {
+        return (state == .inProgress) || (state == .completed && !viewedCompletedPopup)
+    }
+    
+    var showFlagImageView: Bool {
+        return !showActiveMarkerImageView && (state == .completed && viewedCompletedPopup)
     }
 }
