@@ -14,7 +14,7 @@ protocol QuestObjectivesDelegate: AnyObject {
 
 class QuestMapViewController: UIViewController {
     
-    // MARK: - IBOutlet
+    // MARK: - IBOutlets
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var questPathView: UIView!
@@ -79,9 +79,9 @@ class QuestMapViewController: UIViewController {
         var dottedLine: UIBezierPath?
         var objectiveViewsWidth: CGFloat = 0
         
-        for currentModel in objectiveModels {
-            if currentModel.nodeType == QuestObjectiveModel.NodeType.finish {
-                let finishView = QuestFinishView.init(frame: currentModel.position)
+        for currentObjectiveModel in objectiveModels {
+            if currentObjectiveModel.nodeType == QuestObjectiveModel.NodeType.finish {
+                let finishView = QuestFinishView.init(frame: currentObjectiveModel.position)
                 
                 questObjectivesView.addSubview(finishView)
                 
@@ -91,15 +91,7 @@ class QuestMapViewController: UIViewController {
                 
                 objectiveViewsWidth = (finishView.frame.origin.x + finishView.frame.size.width + 40)
             } else {
-                let currentObjectiveView = QuestObjectiveView.init(frame: currentModel.position)
-                
-                if currentModel.isFirstNode {
-                    currentObjectiveView.starBustLottieView.isHidden = false
-                    currentObjectiveView.nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
-                    currentObjectiveView.nodeBaseActiveEclipseImageView.isHidden = false
-                    currentObjectiveView.nodeBaseActiveNumberLabel.text = "1"
-                    currentObjectiveView.nodeActiveMarkerOrBuddyView.isHidden = false
-                }
+                let currentObjectiveView = QuestObjectiveView.init(frame: currentObjectiveModel.position, objectiveModel: currentObjectiveModel)
                 
                 questObjectivesView.addSubview(currentObjectiveView)
                 

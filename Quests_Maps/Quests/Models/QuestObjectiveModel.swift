@@ -27,7 +27,6 @@ struct QuestObjectiveModel {
         case notStarted = 0
         case completed = 1
         case inProgress = 2
-        case closed = 3
     }
     
     static let kDefaultXForiPAD: CGFloat = -84.0
@@ -41,6 +40,21 @@ struct QuestObjectiveModel {
     let isFirstNode: Bool
     let isLastNode: Bool
     let previousXValue: CGFloat
+    
+    // MARK: - Init Methods
+    
+    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, previousXVal: CGFloat) {
+        index = currentIndex
+        count = objectivesCount
+        withReadingBuddy = withBuddy
+        state = objectiveState
+        isFirstNode = (currentIndex == 0)
+        isLastNode = (currentIndex == (objectivesCount - 1))
+        order = (((currentIndex % 2) == 0) ? .even : .odd)
+        nodeType = (isLastNode ? .finish : (withReadingBuddy ? .questObjectiveWithBuddy : .questObjective))
+        
+        previousXValue = previousXVal
+    }
 }
 
 extension QuestObjectiveModel {
@@ -91,19 +105,13 @@ extension QuestObjectiveModel {
     var position: CGRect {
         return CGRect(origin: origin, size: size)
     }
+}
+
+extension QuestObjectiveModel {
     
-    // MARK: - Init Methods
+    // ALL UI Stuff
     
-    init(currentIndex: Int, objectivesCount: Int, withBuddy: Bool, objectiveState: State, previousXVal: CGFloat) {
-        index = currentIndex
-        count = objectivesCount
-        withReadingBuddy = withBuddy
-        state = objectiveState
-        isFirstNode = (currentIndex == 0)
-        isLastNode = (currentIndex == (objectivesCount - 1))
-        order = (((currentIndex % 2) == 0) ? .even : .odd)
-        nodeType = (isLastNode ? .finish : (withReadingBuddy ? .questObjectiveWithBuddy : .questObjective))
-        
-        previousXValue = previousXVal
+    var nodeNumber: Int {
+        return index + 1
     }
 }

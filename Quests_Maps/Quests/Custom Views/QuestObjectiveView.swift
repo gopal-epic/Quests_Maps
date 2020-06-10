@@ -10,6 +10,8 @@ import UIKit
 
 class QuestObjectiveView: UIView {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var starBustLottieView: UIView!
@@ -23,7 +25,10 @@ class QuestObjectiveView: UIView {
     @IBOutlet weak var nodeActiveMarkerOrBuddyView: UIView!
     @IBOutlet weak var nodeActiveMarkerImageView: UIImageView!
     
+    // MARK: - Var & Constants
+    
     static var tabbedNibName: String { return "QuestObjectiveView" }
+    fileprivate var quesObjectiveModel: QuestObjectiveModel
        
     var frameInQuestMap: CGRect {
         let contentViewFrame = self.frame
@@ -37,15 +42,16 @@ class QuestObjectiveView: UIView {
     }
     
     // MARK:- Init Methods
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect, objectiveModel: QuestObjectiveModel) {
+        self.quesObjectiveModel = objectiveModel
+        
         super.init(frame: frame)
         commonInit()
+        updateUI()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func commonInit() {
@@ -53,5 +59,17 @@ class QuestObjectiveView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    func updateUI() {
+        guard quesObjectiveModel.state != QuestObjectiveModel.State.notStarted else { return }
+        
+        if quesObjectiveModel.isFirstNode {
+            starBustLottieView.isHidden = false
+            nodeBaseImageView.image = UIImage.init(named: "quest-node-active-base")
+            nodeBaseActiveEclipseImageView.isHidden = false
+            nodeBaseActiveNumberLabel.text = "\(quesObjectiveModel.nodeNumber)"
+            nodeActiveMarkerOrBuddyView.isHidden = false
+        }
     }
 }
