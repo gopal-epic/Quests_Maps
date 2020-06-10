@@ -22,7 +22,6 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Q1h-BA-B0O" firstAttribute="leading" secondItem="JwS-BA-YJh" secondAttribute="leading" id="Iqo-KS-7u4"/>
                             <constraint firstItem="JwS-BA-YJh" firstAttribute="bottom" secondItem="Q1h-BA-B0O" secondAttribute="bottom" id="LRm-h7-Lk9"/>
@@ -63,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-zB-Mb1">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-zB-Mb1">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                 <subviews>
                                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-nD-1H0" userLabel="Content View">
@@ -75,6 +74,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-P9-g52" userLabel="Quest Path View">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="Quest Path View"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYk-4E-BYF" userLabel="Quest Objectives View">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Quest Path View"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1024" id="5hn-5S-N4x"/>
+                                                </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
@@ -94,16 +100,20 @@
                                         </subviews>
                                         <accessibility key="accessibilityConfiguration" identifier="Content View"/>
                                         <constraints>
-                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="leading" secondItem="zpb-yJ-6EO" secondAttribute="leading" id="7Rb-BO-Nqx"/>
-                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="8hd-wV-3vi"/>
+                                            <constraint firstAttribute="bottom" secondItem="mYk-4E-BYF" secondAttribute="bottom" id="2Nw-Ei-q72"/>
+                                            <constraint firstItem="mYk-4E-BYF" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="81b-Y5-FKT"/>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="AlQ-IB-ey3"/>
                                             <constraint firstAttribute="bottom" secondItem="zMQ-hp-eYM" secondAttribute="bottom" constant="300" id="DdA-0d-m89"/>
-                                            <constraint firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="GPd-mm-Ifg"/>
-                                            <constraint firstItem="zpb-yJ-6EO" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="MEe-Ty-gGx"/>
-                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="N4i-3L-K2S"/>
-                                            <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="QQW-bm-wn9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ru5-P9-g52" secondAttribute="trailing" id="K0T-1F-ou2"/>
+                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="NI2-mf-VsE"/>
+                                            <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="VAM-gw-bB0"/>
+                                            <constraint firstItem="zpb-yJ-6EO" firstAttribute="top" secondItem="aI8-nD-1H0" secondAttribute="top" id="WhC-zC-eeI"/>
+                                            <constraint firstAttribute="trailing" secondItem="mYk-4E-BYF" secondAttribute="trailing" id="eXk-k3-n2w"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ru5-P9-g52" secondAttribute="bottom" id="fY3-ts-pu2"/>
                                             <constraint firstItem="zMQ-hp-eYM" firstAttribute="centerX" secondItem="aI8-nD-1H0" secondAttribute="centerX" id="hIC-aM-rXH"/>
-                                            <constraint firstItem="zpb-yJ-6EO" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="reC-jT-Uyy"/>
-                                            <constraint firstItem="Ru5-P9-g52" firstAttribute="top" secondItem="zpb-yJ-6EO" secondAttribute="top" id="tZZ-6C-UcW"/>
+                                            <constraint firstItem="mYk-4E-BYF" firstAttribute="leading" secondItem="aI8-nD-1H0" secondAttribute="leading" id="hqN-Yw-U4H"/>
+                                            <constraint firstAttribute="bottom" secondItem="zpb-yJ-6EO" secondAttribute="bottom" id="nES-CE-MqO"/>
+                                            <constraint firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="vOs-7p-MvV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -120,7 +130,6 @@
                         <constraints>
                             <constraint firstItem="aI8-nD-1H0" firstAttribute="height" secondItem="3nm-h4-w8O" secondAttribute="height" id="P4A-SV-Tda"/>
                             <constraint firstItem="Kqn-zB-Mb1" firstAttribute="leading" secondItem="gFq-7e-mxc" secondAttribute="leading" id="UBv-X0-HSm"/>
-                            <constraint firstItem="aI8-nD-1H0" firstAttribute="width" secondItem="3nm-h4-w8O" secondAttribute="width" id="qTB-5A-Ym2"/>
                             <constraint firstItem="Kqn-zB-Mb1" firstAttribute="top" secondItem="gFq-7e-mxc" secondAttribute="top" id="uJz-it-okc"/>
                             <constraint firstItem="gFq-7e-mxc" firstAttribute="bottom" secondItem="Kqn-zB-Mb1" secondAttribute="bottom" id="ueI-7z-9PG"/>
                             <constraint firstItem="Kqn-zB-Mb1" firstAttribute="trailing" secondItem="gFq-7e-mxc" secondAttribute="trailing" id="zpj-59-qTD"/>
@@ -129,7 +138,8 @@
                     </view>
                     <connections>
                         <outlet property="animateButton" destination="zMQ-hp-eYM" id="bOh-HL-vda"/>
-                        <outlet property="contentView" destination="aI8-nD-1H0" id="YlU-Oc-KqZ"/>
+                        <outlet property="questObjectivesView" destination="mYk-4E-BYF" id="S6V-XT-aja"/>
+                        <outlet property="questObjectivesViewWidth" destination="5hn-5S-N4x" id="n2W-7o-uUI"/>
                         <outlet property="questPathView" destination="Ru5-P9-g52" id="Lzf-vv-uql"/>
                         <outlet property="scrollView" destination="Kqn-zB-Mb1" id="ReD-Xk-FBE"/>
                     </connections>

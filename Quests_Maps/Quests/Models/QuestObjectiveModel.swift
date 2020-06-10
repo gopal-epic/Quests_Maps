@@ -40,9 +40,10 @@ struct QuestObjectiveModel {
     let state: State
     let isFirstNode: Bool
     let isLastNode: Bool
-    
     let previousXValue: CGFloat
-    
+}
+
+extension QuestObjectiveModel {
     var paddingForXValue: CGFloat {
         return (nodeType == .finish ? 440.0 : 264.0)
     }

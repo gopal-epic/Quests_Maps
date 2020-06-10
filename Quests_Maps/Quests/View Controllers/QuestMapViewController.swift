@@ -17,9 +17,11 @@ class QuestMapViewController: UIViewController {
     // MARK: - IBOutlet
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var questPathView: UIView!
+    @IBOutlet weak var questObjectivesView: UIView!
     @IBOutlet weak var animateButton: UIButton!
+    
+    @IBOutlet weak var questObjectivesViewWidth: NSLayoutConstraint!
     
     // MARK: - Var & Constants
     
@@ -41,14 +43,11 @@ class QuestMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchQuestObjectives()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        questObjectivesViewWidth.constant = view.bounds.size.width
         
-        addQuestObjectivesToContentView()
-        addDottedLineToQuestPathView()
+        fetchQuestObjectives()
+        addQuestObjectives()
+        addDottedLine()
     }
     
     func fetchQuestObjectives() {
@@ -72,25 +71,25 @@ class QuestMapViewController: UIViewController {
         }
     }
     
-    func addQuestObjectivesToContentView() {
+    func addQuestObjectives() {
         guard let objectiveModels = objectiveModels else { return }
         
         var previousObjectiveView: QuestObjectiveView?
         objectiveViews = [QuestObjectiveView]()
-        
         var dottedLine: UIBezierPath?
+        var objectiveViewsWidth: CGFloat = 0
         
         for currentModel in objectiveModels {
             if currentModel.nodeType == QuestObjectiveModel.NodeType.finish {
                 let finishView = QuestFinishView.init(frame: currentModel.position)
                 
-                contentView.addSubview(finishView)
+                questObjectivesView.addSubview(finishView)
                 
                 if let previousObjectiveView = previousObjectiveView {
                     dottedLine = QuestMapAlgorithm.determineBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: finishView.frame, node2Center: finishView.center, finishNode: true)
                 }
                 
-                scrollView.contentSize = CGSize(width: (finishView.frame.origin.x + finishView.frame.size.width + 40), height: contentView.frame.size.height)
+                objectiveViewsWidth = (finishView.frame.origin.x + finishView.frame.size.width + 40)
             } else {
                 let currentObjectiveView = QuestObjectiveView.init(frame: currentModel.position)
                 
@@ -102,7 +101,7 @@ class QuestMapViewController: UIViewController {
                     currentObjectiveView.nodeActiveMarkerOrBuddyView.isHidden = false
                 }
                 
-                contentView.addSubview(currentObjectiveView)
+                questObjectivesView.addSubview(currentObjectiveView)
                 
                 if let previousObjectiveView = previousObjectiveView {
                     dottedLine = QuestMapAlgorithm.determineBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: currentObjectiveView.frameInQuestMap, node2Center: currentObjectiveView.centerInQuestMap, finishNode: false)
@@ -119,17 +118,19 @@ class QuestMapViewController: UIViewController {
                 linePath?.append(dottedLine)
             }
         }
+        
+        if objectiveViewsWidth > questObjectivesViewWidth.constant {
+            questObjectivesViewWidth.constant = objectiveViewsWidth
+        }
     }
     
-    func addDottedLineToQuestPathView() {
+    func addDottedLine() {
         guard let linePath = linePath else { return }
         
         shapeLayer = QuestPath.init(path: linePath.cgPath, pathType: QuestPath.PathType.dottedLine)
         guard let shapeLayer = shapeLayer else { return }
         
-        questPathView.layer.addSublayer(shapeLayer)
-        
-        contentView.bringSubviewToFront(animateButton)
+        questPathView.layer.addSublayer(shapeLayer)        
     }
     
     func playLineAnimation() {
