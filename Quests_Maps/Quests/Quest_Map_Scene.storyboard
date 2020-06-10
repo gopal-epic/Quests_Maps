@@ -63,10 +63,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-zB-Mb1">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-zB-Mb1">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-nD-1H0" userLabel="Content View">
+                                    <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-nD-1H0" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quest-bg-forest" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-yJ-6EO">
@@ -74,6 +74,7 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-P9-g52" userLabel="Quest Path View">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Quest Path View"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-hp-eYM">
                                                 <rect key="frame" x="412" y="370" width="200" height="48"/>
@@ -91,6 +92,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <accessibility key="accessibilityConfiguration" identifier="Content View"/>
                                         <constraints>
                                             <constraint firstItem="Ru5-P9-g52" firstAttribute="leading" secondItem="zpb-yJ-6EO" secondAttribute="leading" id="7Rb-BO-Nqx"/>
                                             <constraint firstItem="Ru5-P9-g52" firstAttribute="trailing" secondItem="zpb-yJ-6EO" secondAttribute="trailing" id="8hd-wV-3vi"/>

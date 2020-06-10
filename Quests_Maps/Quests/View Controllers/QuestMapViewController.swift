@@ -42,8 +42,16 @@ class QuestMapViewController: UIViewController {
         super.viewDidLoad()
         
         fetchQuestObjectives()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         addQuestObjectivesToContentView()
         addDottedLineToQuestPathView()
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func fetchQuestObjectives() {
@@ -84,6 +92,8 @@ class QuestMapViewController: UIViewController {
                 if let previousObjectiveView = previousObjectiveView {
                     dottedLine = QuestMapAlgorithm.determineFinishBeizerPath(from: previousObjectiveView.frameInQuestMap, node1Center: previousObjectiveView.centerInQuestMap, to: finishView.frame, node2Center: finishView.center)
                 }
+                
+                scrollView.contentSize = CGSize(width: (finishView.frame.origin.x + finishView.frame.size.width + 40), height: contentView.frame.size.height)
             } else {
                 let currentObjectiveView = QuestObjectiveView.init(frame: currentModel.position)
                 
