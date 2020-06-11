@@ -35,7 +35,9 @@ class QuestMapViewController: UIViewController {
     var objectiveViews: [QuestObjectiveView]?
     
     @IBAction func animateButtonAction(_ sender: UIButton) {
-        playLineAnimation()
+        guard let objectiveModels = objectiveModels else { return }
+        
+        playLineAnimation(till: objectiveModels[1])
     }
     
     // MARK: - Lifecycle
@@ -78,14 +80,15 @@ class QuestMapViewController: UIViewController {
         guard let objectiveModels = objectiveModels else { return }
         
         var previousObjectiveView: QuestObjectiveView?
-        objectiveViews = [QuestObjectiveView]()
         var dottedLine: UIBezierPath?
         var objectiveViewsWidth: CGFloat = 0
         
-        for currentObjectiveModel in objectiveModels {
+        objectiveViews = [QuestObjectiveView]()
+        
+        for (i, currentObjectiveModel) in objectiveModels.enumerated() {
+            
             if currentObjectiveModel.nodeType == QuestObjectiveModel.NodeType.finish {
                 let finishView = QuestFinishView.init(frame: currentObjectiveModel.position)
-                
                 questObjectivesView.addSubview(finishView)
                 
                 if let previousObjectiveView = previousObjectiveView {
@@ -95,7 +98,6 @@ class QuestMapViewController: UIViewController {
                 objectiveViewsWidth = (finishView.frame.origin.x + finishView.frame.size.width + 40)
             } else {
                 let currentObjectiveView = QuestObjectiveView.init(frame: currentObjectiveModel.position, objectiveModel: currentObjectiveModel)
-                
                 questObjectivesView.addSubview(currentObjectiveView)
                 
                 if let previousObjectiveView = previousObjectiveView {
@@ -105,12 +107,14 @@ class QuestMapViewController: UIViewController {
                 previousObjectiveView = currentObjectiveView
             }
             
-            guard let dottedLine = dottedLine else { continue }
-            
-            if linePath == nil {
-                linePath = dottedLine
-            } else {
-                linePath?.append(dottedLine)
+            if let dottedLine = dottedLine {
+                self.objectiveModels?[i].linePath = dottedLine.copy() as? UIBezierPath
+                
+                if linePath == nil {
+                    linePath = dottedLine
+                } else {
+                    linePath?.append(dottedLine)
+                }
             }
         }
         
@@ -128,8 +132,8 @@ class QuestMapViewController: UIViewController {
         questPathView.layer.addSublayer(shapeLayer)        
     }
     
-    func playLineAnimation() {
-        guard let linePath = linePath,
+    func playLineAnimation(till objectiveModel: QuestObjectiveModel) {
+        guard let linePath = objectiveModel.linePath,
               let shapeLayer = shapeLayer
               else { return }
         

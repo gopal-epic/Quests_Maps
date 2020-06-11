@@ -41,6 +41,7 @@ struct QuestObjectiveModel {
     let isLastNode: Bool
     let previousXValue: CGFloat
     let viewedCompletedPopup: Bool
+    var linePath: UIBezierPath?
     
     // MARK: - Init Methods
     
