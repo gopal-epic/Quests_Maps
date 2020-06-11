@@ -21,7 +21,7 @@ class QuestPathAnimation: CABasicAnimation {
         let lineAnimation = CABasicAnimation(keyPath: animationType.rawValue)
         lineAnimation.fromValue = 0
         lineAnimation.toValue = 1
-        lineAnimation.duration = 0.60
+        lineAnimation.duration = 0.90
         lineAnimation.repeatCount = 0
         lineAnimation.delegate = delegate
         
